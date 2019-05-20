@@ -1,2 +1,12 @@
+<div class="container">
+<h1><%= @event.description %></h1>
 
-<h1>@event.</h1>
+<p>Hosted by: <%= @profile.first_name %></p>
+<br>
+<p>Event Location: <%= @event.location %> </p>
+<br>
+<p>We are playing: <%= @event.game %></p>
+<br>
+<p>Game will be played on: <%= @event.date %></p>
+
+</div>
