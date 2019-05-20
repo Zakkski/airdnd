@@ -1,6 +1,7 @@
 <h1><%= @user.email %></h1>
 
 
+<%= cl_image_tag @profile.photo %>
 <ul>
   <% @hosted_events.each do |event| %>
     <li><%= event.description %></li>
