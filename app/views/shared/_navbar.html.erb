@@ -15,7 +15,8 @@
           <%= link_to "Home", root_path, class: "nav-link" %>
         </li>
         <li class="nav-item dropdown">
-          <%= cl_image_tag current_user.profile.photo, width: 45, crop: :thumb, gravity: :face, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+          <% @profile = Profile.where(user_id: = current_user.id) %>
+          <%= cl_image_tag @profile.photo, width: 45, crop: :thumb, gravity: :face, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
             <%= link_to "Action", "#", class: "dropdown-item" %>
             <%= link_to "Another action", "#", class: "dropdown-item" %>
