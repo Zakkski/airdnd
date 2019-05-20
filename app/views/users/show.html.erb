@@ -1,0 +1,8 @@
+<h1><%= @user.email %></h1>
+
+
+<ul>
+  <% @hosted_events.each do |event| %>
+    <li><%= event.description %></li>
+  <% end %>
+</ul>
