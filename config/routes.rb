@@ -3,10 +3,11 @@ Rails.application.routes.draw do
   root to: 'pages#home'
 
   resources :events, only: [:new, :create, :index, :show, :update]
-  resources :users, only: [:show]
+  resources :users, only: [:show] do
+    resources :profiles, only: [:new, :create]
+  end
 
 
-  
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
