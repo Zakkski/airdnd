@@ -7,4 +7,5 @@ class User < ApplicationRecord
 
   has_many :events
   has_many :bookings
+  has_one :profile
 end
