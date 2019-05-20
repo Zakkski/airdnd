@@ -1,7 +1,10 @@
 <div class="container">
 <h1><%= @event.description %></h1>
 
-<p>Hosted by: <%= @profile.first_name %></p>
+<% if @profile %>
+  <p>Hosted by: <%= @profile.first_name %></p>
+<% end %>
+
 <br>
 <p>Event Location: <%= @event.location %> </p>
 <br>
