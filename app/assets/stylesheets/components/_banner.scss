@@ -1,0 +1,35 @@
+.banner{
+  background-image: linear-gradient(to left, rgba(30, 30, 30, 0.22), rgba(30, 30, 30, 0.53)), asset-url("banner_image");
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  color: white;
+  padding: 13% 15%;
+  font-family: 'Rubik', sans-serif;
+}
+
+
+
+
+.banner-btn{
+  color: red;
+  background-color: #D1CA98;
+  border-radius: 5px;
+  width: 81px;
+  height: 40px;
+  display: flex;
+  opacity: 1.4;
+  justify-content: space-around;
+  align-items: center;
+  margin: 29px 0px;
+
+  a{
+    color:white;
+    &:hover{
+      text-decoration: none;
+      opacity:0.8;
+
+    }
+  }
+
+}
