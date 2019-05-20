@@ -4,9 +4,11 @@
 
   <div class="banner-info">
     <h1>AirD&D</h1>
-    <h3>Together we stand!</h1>
+    <h3>Together we stand!</h3>
 
-    <p class="banner-btn"><%= link_to "Discover", root_path %></p>
+    <p class="banner-btn"><%= link_to "Discover", events_path %></p>
+    <%= link_to "New Event", new_event_path, class: "banner-btn" %>
+
   </div>
 
 

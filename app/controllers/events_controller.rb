@@ -8,6 +8,10 @@ class EventsController < ApplicationController
     @event = Event.new
   end
 
+  def index
+    @events = Event.all
+  end
+
   def create
     @event = Event.new(event_params)
     @event.user = current_user
@@ -21,6 +25,6 @@ class EventsController < ApplicationController
   private
 
   def event_params
-    params.require(:event).permit(:game, :description, :location, :user)
+    params.require(:event).permit(:game, :description, :location,:date, :user)
   end
 end
