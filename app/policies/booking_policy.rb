@@ -9,6 +9,10 @@ class BookingPolicy < ApplicationPolicy
     record.event.user != user
   end
 
+  def destroy?
+    true
+  end
+  
   def edit?
     record.user == user
   end
