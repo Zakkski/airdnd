@@ -17,4 +17,12 @@ class EventPolicy < ApplicationPolicy
     true
   end
 
+  def edit?
+    record.user == user
+  end
+
+  def update?
+    true
+  end
+
 end

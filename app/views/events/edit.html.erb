@@ -1,0 +1,11 @@
+<h1>Edit <%= @event.description %></h1>
+
+<%= simple_form_for(@event) do |f| %>
+  <%= f.input :game %>
+  <%= f.input :description %>
+  <%= f.input :location %>
+  <%= f.input :date %>
+  <%= f.submit %>
+<% end %>
+
+<%= link_to "Home", root_path %>

@@ -5,6 +5,8 @@
   <p>Hosted by: <%= @profile.first_name %></p>
 <% end %>
 
+
+
 <br>
 <p>Event Location: <%= @event.location %> </p>
 <br>
@@ -16,7 +18,8 @@
     <%= f.submit "Join the Party" %>
 <% end %>
 
-
+<p><%= link_to "edit", edit_event_path(@event) %></p>
 <%= link_to "Home", root_path  %>
+
 </div>
 
