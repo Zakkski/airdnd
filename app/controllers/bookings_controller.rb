@@ -18,7 +18,7 @@ class BookingsController < ApplicationController
   end
 
   def index
-    @bookings = current_user.bookings
+    @bookings = policy_scope(Booking).order(created_at: :desc)
   end
 
   private
