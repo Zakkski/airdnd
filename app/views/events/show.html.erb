@@ -39,6 +39,10 @@
   <p><%= link_to "edit", edit_event_path(@event) %></p>
 <% end %>
 
+<%if policy(@event).destroy?  %>
+  <p><%= link_to "💣", event_path(@event), method: :delete %></p>
+<% end %>
+
 <%= link_to "Home", root_path  %>
 
 </div>
