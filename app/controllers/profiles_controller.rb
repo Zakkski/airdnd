@@ -7,8 +7,10 @@ class ProfilesController < ApplicationController
 
   def create
     @profile = Profile.new(profile_params)
+
     authorize @profile
     @profile.user = current_user
+
     if @profile.save
       redirect_to root_path
     else

@@ -12,6 +12,11 @@
 <br>
 <p>Game will be played on: <%= @event.date %></p>
 
+<%= simple_form_for([@event, @booking]) do |f| %>
+    <%= f.submit "Join the Party" %>
+<% end %>
+
+
 <%= link_to "Home", root_path  %>
 </div>
 

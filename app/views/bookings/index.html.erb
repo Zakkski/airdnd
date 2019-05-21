@@ -1,0 +1,16 @@
+<!-- show user bookings -->
+<div class="container">
+  <h1>Bookings for: <%= current_user.profile.first_name %></h1>
+
+  <% @bookings.each do |booking| %>
+    <div>
+      <article>
+        <p>a night of <%= booking.event.game %></p>
+        <p>hosted by <%= booking.event.user.profile.first_name %></p>
+        <p>Date: <%= booking.event.date %></p>
+
+
+      </article>
+    </div>
+  <% end %>
+</div>
