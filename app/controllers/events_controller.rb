@@ -1,4 +1,6 @@
 class EventsController < ApplicationController
+
+  before_action :authenticate_user!, except: [:index, :show]
   def show
 
     @booking = Booking.new
@@ -41,11 +43,19 @@ class EventsController < ApplicationController
     @event = Event.find(params[:id])
     authorize @event
     @event.update(event_params)
-    if @event.save
+    if @event.update
       redirect_to @event
     else
       render "edit"
     end
+  end
+
+  def destroy
+    @event = Event.find(params[:id])
+    authorize @event
+
+    @event.destroy
+    redirect_to events_path
   end
 
   private
