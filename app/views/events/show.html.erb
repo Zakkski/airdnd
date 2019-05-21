@@ -24,7 +24,15 @@
   <%= simple_form_for([@event, @booking]) do |f| %>
     <%= f.submit "Join the Party" %>
 <% end %>
-
+<% if @booking.errors.any? %>
+  <div class="errors-container">
+    <ul>
+      <%  @booking.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
 <% end %>
 
 <%if policy(@event).edit?  %>
