@@ -11,7 +11,7 @@ end
     location: Faker::Movies::HitchhikersGuideToTheGalaxy.location,
     description: Faker::TvShows::BojackHorseman.tongue_twister,
     game: Faker::Books::Lovecraft.tome,
-    user: User.all.sample
+    user: User.all.sample,
     date: "19900505"
     )
   event.save!
