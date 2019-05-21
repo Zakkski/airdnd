@@ -5,7 +5,7 @@ User.destroy_all
 
 u = User.create(email: "user@email.com", password: "password")
 p = Profile.new(first_name: "User", last_name: "Person")
-p.remote_photo_url = image_path("https://picsum.photos/300/300")
+p.remote_photo_url = "https://picsum.photos/300/300"
 p.user = u
 p.save!
 
