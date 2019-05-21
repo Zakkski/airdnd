@@ -14,25 +14,39 @@
 <br>
 <p>Game will be played on: <%= @event.date %></p>
 
-<h3>The following people are attending:</h3>
-<% @event.bookings.each do |booking| %>
-  <%= booking.user.profile.first_name %>
-<% end %>
 
-<% if  current_user != @event.user %>
+<% if  current_user == @event.user %>
+
+    <% @bookings.each do |booking| %>
+      <%= simple_form_for([@event, booking]) do |f| %>
+        <%= booking.user.profile.first_name %>
+        <%= f.input :accepted %>
+        <%= f.submit %>
+      <% end %>
+
+    <% end %>
+
+<% else %>
+  <% if @event.bookings.any? %>
+
+    <h3>The following people are attending:</h3>
+
+    <% @event.bookings.each do |booking| %>
+        <% if  booking.accepted %>
+          <%= booking.user.profile.first_name %>
+        <% end %>
+    <% end %>
+
+  <% end %>
 
   <%= simple_form_for([@event, @booking]) do |f| %>
     <%= f.submit "Join the Party" %>
-<% end %>
-<% if @booking.errors.any? %>
-  <div class="errors-container">
-    <ul>
-      <%  @booking.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-    </ul>
-  </div>
-<% end %>
+  <% end %>
+
+  <% if @booking.errors.any? %>
+    <%=  render 'shared/error-messages' %>
+  <% end %>
+
 <% end %>
 
 <%if policy(@event).edit?  %>

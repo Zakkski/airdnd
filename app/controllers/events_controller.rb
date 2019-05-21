@@ -41,7 +41,7 @@ class EventsController < ApplicationController
     @event = Event.find(params[:id])
     authorize @event
     @event.update(event_params)
-    if @event.save
+    if @event.update
       redirect_to @event
     else
       render "edit"
