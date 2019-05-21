@@ -1,14 +1,9 @@
-class EventPolicy < ApplicationPolicy
+class ProfilePolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
       scope.all
     end
   end
-
-  def show?
-    true
-  end
-
   def new?
     create?
   end
@@ -16,5 +11,4 @@ class EventPolicy < ApplicationPolicy
   def create?
     true
   end
-
 end

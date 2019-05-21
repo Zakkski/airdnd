@@ -3,9 +3,8 @@ Rails.application.routes.draw do
   root to: 'pages#home'
 
   resources :events, only: [:new, :create, :index, :show, :update]
-  resources :users, only: [:show] do
-    resources :profiles, only: [:new, :create]
-  end
+  resources :users, only: [:show]
+  resources :profiles, only: [:new, :create, :show]
 
 
 
