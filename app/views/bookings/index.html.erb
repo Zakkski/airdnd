@@ -8,8 +8,7 @@
         <p>a night of <%= booking.event.game %></p>
         <p>hosted by <%= booking.event.user.profile.first_name %></p>
         <p>Date: <%= booking.event.date %></p>
-
-
+        <%= link_to "Delete Booking", booking, method: :delete %>
       </article>
     </div>
   <% end %>

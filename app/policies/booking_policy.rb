@@ -8,4 +8,8 @@ class BookingPolicy < ApplicationPolicy
   def create?
     record.event.user != user
   end
+
+  def destroy?
+    true
+  end
 end

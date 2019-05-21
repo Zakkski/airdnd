@@ -1,5 +1,5 @@
 class BookingsController < ApplicationController
-  before_action :set_booking, only: [:update, :show]
+  before_action :set_booking, only: [:update, :show, :destroy]
   def new
     @booking = Booking.new
     authorize @booking
@@ -21,10 +21,16 @@ class BookingsController < ApplicationController
     @bookings = policy_scope(Booking).order(created_at: :desc)
   end
 
+  def destroy
+    authorize @booking
+    @booking.destroy
+    redirect_to bookings_path
+  end
+
   private
 
   def set_booking
-    @booking = Booking.Find(params[:id])
+    @booking = Booking.find(params[:id])
   end
 
   def booking_params
