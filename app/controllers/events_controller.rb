@@ -14,14 +14,12 @@ class EventsController < ApplicationController
   end
 
   def index
-    @events = Event.all
-    skip_authorization
-  end
-
-  def my_events
     @events = policy_scope(Event).order(created_at: :desc)
   end
 
+  def my_events
+    @events = policy_scope(Event).where(user: current_user)
+  end
 
   def create
     @event = Event.new(event_params)
