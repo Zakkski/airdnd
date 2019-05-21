@@ -1,7 +1,9 @@
 class EventsController < ApplicationController
   def show
+
     @booking = Booking.new
     @event = Event.find(params[:id])
+    @bookings = @event.bookings
     @profile = @event.user.profile
     authorize @event
   end
