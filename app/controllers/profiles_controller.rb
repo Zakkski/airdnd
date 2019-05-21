@@ -5,6 +5,11 @@ class ProfilesController < ApplicationController
     authorize @profile
   end
 
+  def show?
+    @profile = Profile.find(params[:id])
+    authorize @profile
+  end
+
   def create
     @profile = Profile.new(profile_params)
 

@@ -2,14 +2,16 @@ class BookingsController < ApplicationController
   before_action :set_booking, only: [:update, :show]
   def new
     @booking = Booking.new
+    authorize @booking
   end
 
   def create
+    @event = Event.find(params[:event_id])
     @booking = Booking.new(booking_params)
     @booking.user = current_user
-
+    authorize @booking
     if @booking.save
-      redirect_to event_path(@booking.event)
+      redirect_to event_path(@event)
     else
       render 'events/show'
     end
@@ -18,8 +20,6 @@ class BookingsController < ApplicationController
   def index
     @bookings = current_user.bookings
   end
-
-
 
   private
 
