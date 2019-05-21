@@ -1,0 +1,9 @@
+<!-- show user bookings -->
+
+<h1>Bookings for: <%= current_user.profile.first_name %></h1>
+
+<% @bookings.each do |booking| %>
+  <article>
+    <%= booking.event.description %>
+  </article>
+<% end %>
