@@ -1,9 +1,13 @@
+<div class="container w-50">
+<h1>Can we play a game?</h1>
+
 <%= simple_form_for(@event) do |f| %>
-  <%= f.input :game %>
-  <%= f.input :description %>
-  <%= f.input :location %>
-  <%= f.input :date %>
+  <%= f.input :game, label: "What game will we be playing"%>
+  <%= f.input :description, label: "What is your event about" %>
+  <%= f.input :location , placeholder: "Where are we playing?"%>
+  <%= f.input :date, as: :date, html5: true %>
   <%= f.submit %>
 <% end %>
 
 <%= link_to "Home", root_path %>
+</div>
