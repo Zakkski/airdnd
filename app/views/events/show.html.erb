@@ -18,7 +18,10 @@
     <%= f.submit "Join the Party" %>
 <% end %>
 
-<p><%= link_to "edit", edit_event_path(@event) %></p>
+<%if policy(@event).edit?  %>
+  <p><%= link_to "edit", edit_event_path(@event) %></p>
+<% end %>
+
 <%= link_to "Home", root_path  %>
 
 </div>
