@@ -4,20 +4,9 @@
     <h1>Events</h1>
 
     <% @events.each do |event| %>
-
-    <article>
-      <h4><%= event.game %></h4>
-      <%= link_to event.description, event_path(event) %>
-      <br>
-      <%= event.date %>
-      <br>
-      <% if event.user.profile %>
-        <%= event.user.profile.first_name %>
+      <%= link_to event_path(event), style: "text-decoration: none" do %>
+        <%= render partial: "event-card", locals: {event: event} %>
       <% end %>
-
-
-    </article>
-
     <% end %>
     <%= link_to "Home", root_path, class: "banner-btn" %>
 

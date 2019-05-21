@@ -1,0 +1,23 @@
+.event-card {
+  background-color: white;
+  border-radius: 5px;
+  color: #555555;
+  margin: 20px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, .3);
+}
+
+.event-card h1 {
+  font-size: 25px;
+}
+
+.event-card .event-content {
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.event-card img {
+  width: 100%;
+  border-radius: 5px 5px 0 0;
+}
