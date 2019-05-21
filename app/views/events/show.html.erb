@@ -14,8 +14,17 @@
 <br>
 <p>Game will be played on: <%= @event.date %></p>
 
-<%= simple_form_for([@event, @booking]) do |f| %>
+<h3>The following people are attending:</h3>
+<% @event.bookings.each do |booking| %>
+  <%= booking.user.profile.first_name %>
+<% end %>
+
+<% if  current_user != @event.user %>
+
+  <%= simple_form_for([@event, @booking]) do |f| %>
     <%= f.submit "Join the Party" %>
+<% end %>
+
 <% end %>
 
 <%if policy(@event).edit?  %>
