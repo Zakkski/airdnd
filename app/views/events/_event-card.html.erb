@@ -1,14 +1,15 @@
 <div class="event-card">
-  <%= image_tag("https://picsum.photos/700/300") %>
+  <%= image_tag"https://picsum.photos/400/100", class: "event-pic"%>
   <div class="event-content">
-  <%= cl_image_tag event.user.profile.photo, gravity: "face", width: 150, height:150, crop: "thumb" %>
     <div class="left-content">
-      <h1><%= event.game %></h1>
+      <h1>We are playing <%= event.game %></h1>
       <p><%= event.description %></p>
     </div>
     <div class="right-content">
-      <p><%= event.date %></p>
+      <p><%= event.date.strftime('%A, %b %d') %></p>
+      <p> Joins us at <%= event.location %></p>
     </div>
+  <%= cl_image_tag event.user.profile.photo, gravity: "face", width: 85, height:85, crop: "thumb", class: "event-card-profile" %>
   </div>
 </div>
      <!-- <%= link_to "See More", event_path(event) %> -->
