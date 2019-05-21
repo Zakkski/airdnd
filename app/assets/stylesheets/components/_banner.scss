@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans|Proza+Libre&display=swap');
+
 .banner{
   background-image: linear-gradient(to left, rgba(30, 30, 30, 0.22), rgba(30, 30, 30, 0.53)), asset-url("banner_image");
   background-size: cover;
@@ -5,23 +7,25 @@
   height: 100vh;
   color: white;
   padding: 13% 15%;
-  font-family: 'Rubik', sans-serif;
+  font-family: 'Proza Libre', sans-serif;
 }
 
 
 
 
 .banner-btn{
-  color: red;
+  color: white;
   background-color: #D1CA98;
   border-radius: 5px;
-  width: 81px;
-  height: 40px;
+  width: 106px;
+  height: 46px;
   display: flex;
   opacity: 1.4;
   justify-content: space-around;
   align-items: center;
-  margin: 29px 0px;
+  margin: 29px 44%;
+  text-align: center;
+  border: 1.3px solid #808080;
 
   a{
     color:white;
@@ -31,5 +35,8 @@
 
     }
   }
+}
 
+.banner-info{
+  text-align:center;
 }
