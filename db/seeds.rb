@@ -1,5 +1,5 @@
-User.destroy_all
 Event.destroy_all
+User.destroy_all
 
 10.times do
   user = User.new(email: Faker::Internet.unique.email, password: "password")
@@ -12,7 +12,7 @@ end
     description: Faker::TvShows::BojackHorseman.tongue_twister,
     game: Faker::Books::Lovecraft.tome,
     user: User.all.sample,
-    date: "19900505"
+    date: "19900505",
     )
   event.save!
 end
