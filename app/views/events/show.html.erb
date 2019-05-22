@@ -60,11 +60,19 @@
         <% end %>
 
         <%if policy(@event).edit?  %>
-          <p><%= link_to "edit", edit_event_path(@event) %></p>
+
+          <%= link_to edit_event_path(@event) do %>
+            <i class="fas fa-edit"></i>
+          <% end %>
+
         <% end %>
 
         <%if policy(@event).destroy?  %>
-          <p><%= link_to "💣", event_path(@event), method: :delete %></p>
+
+          <%= link_to event_path(@event), method: :delete do%>
+          <i class="fas fa-trash"></i>
+          <% end %>
+
         <% end %>
 
       </div>
