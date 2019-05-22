@@ -7,11 +7,13 @@
   <div class="row align-items-start">
 
     <div class="event-list col-6">
-      <% @events.each do |event| %>
-        <%= link_to event_path(event), style: "text-decoration: none" do %>
-          <%= render partial: "event-card", locals: {event: event} %>
+      <div class="d-flex flex-wrap">
+        <% @events.each do |event| %>
+          <%= link_to event_path(event), style: "text-decoration: none" do %>
+            <%= render partial: "event-card", locals: {event: event} %>
+          <% end %>
         <% end %>
-      <% end %>
+      </div>
     </div>
 
     <div class="event-map col-6" id="map"

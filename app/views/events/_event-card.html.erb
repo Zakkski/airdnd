@@ -1,11 +1,8 @@
 <div class="event-card">
-
   <div class="top-card">
       <h1><%= event.game %></h1>
   </div>
-
   <div class="bot-card">
-
       <div class="event-card-details">
         <p><%= event.user.profile.first_name %></p>
       </div>
@@ -16,14 +13,7 @@
         <p><%= event.location %></p>
       </div>
       <%= cl_image_tag event.user.profile.photo, gravity: "face", width: 45, height:45, crop: "thumb", class: "event-card-profile" %></p>
-
-
   </div>
-
-
-
-
-
 </div>
 
 <!-- <%#= link_to "See More", event_path(event) %> -->
