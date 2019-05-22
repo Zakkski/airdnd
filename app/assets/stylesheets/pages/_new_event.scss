@@ -1,0 +1,24 @@
+
+.new-event-form {
+  margin: 0 auto;
+  width: 100%;
+
+}
+
+.new-event-button {
+  color: white;
+  background-color: #D1CA98;
+  border-radius: 5px;
+  padding: 15px;
+  opacity: 1.4;
+  border: 1.3px solid #808080;
+
+  a{
+    color:white;
+    &:hover{
+      text-decoration: none;
+      opacity:0.8;
+
+    }
+  }
+}

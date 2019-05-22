@@ -2,10 +2,11 @@
 <div class="banner">
 
   <div class="banner-info">
+  </div>
     <h1><%= "#{current_user.profile.first_name} #{current_user.profile.last_name}" %></h1>
     <h3><%= current_user.email %></h3>
     <p class="profile-address"><%= current_user.profile.address %></p>
-  </div>
+
   <div class="row">
     <%= cl_image_tag @profile.photo, height: 350, width: 350, crop: :fill %>
     <div>
