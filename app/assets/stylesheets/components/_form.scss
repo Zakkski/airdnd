@@ -5,6 +5,7 @@
   margin: 40px auto;
   width: 400px;
   box-shadow: 0 0 8px rgba(0, 0, 0, .2);
+
   img {
     width: 20%;
     display: block;
@@ -18,6 +19,11 @@
     border-radius: 30px;
     width: 300px;
     background-color: #C4C4C4;
+  }
+
+  .form-title {
+    text-align: center;
+    color: #6C757C;
   }
 
 }
