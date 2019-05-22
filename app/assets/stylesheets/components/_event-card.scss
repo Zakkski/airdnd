@@ -4,29 +4,65 @@
   color: #555555;
   margin: 20px;
   box-shadow: 0 0 8px rgba(0, 0, 0, .3);
+  width: 40%;
+
 
 }
 
 .event-card h1 {
-  font-size: 25px;
+  font-size: 18px;
+  font-size: 31px;
+  padding: 20px;
 }
 
 .event-card .event-content {
-  padding: 10px;
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
   position: relative;
+  padding: 10px;
+
 }
 
 .event-pic {
   width: 100%;
   border-radius: 5px 5px 0 0;
+  height: 181px;
 }
 
 .event-card-profile {
   border-radius: 50%;
   position: absolute;
-  top: -85px;
-  right: 1px;
+  top: -66.1px;
+  right: 12.1px;
+  height: 40px;
+  width: 40px;
 }
+
+.left-content p{
+  font-size: 13px;
+}
+
+.right-content{
+ padding: 4px;
+ padding: 4px;
+ font-size: 16px;
+}
+
+.description{
+  padding: 12px 0;
+  justify-content: space-arround;
+  margin-top: 4px;
+  align-items: center;
+}
+
+#card-date{
+  padding-top: 11px;
+  font-size: 13px;
+}
+
+#card-location{
+  font-size: 20px;
+}
+
+
