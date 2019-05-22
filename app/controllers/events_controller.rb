@@ -1,8 +1,7 @@
 class EventsController < ApplicationController
-
   before_action :authenticate_user!, except: [:index, :show]
-  def show
 
+  def show
     @booking = Booking.new
     @event = Event.find(params[:id])
     @bookings = @event.bookings
@@ -23,7 +22,6 @@ class EventsController < ApplicationController
         lat: event.latitude,
         lng: event.longitude,
         infoWindow: render_to_string(partial: "infowindow", locals: { event: event })
-
       }
     end
   end

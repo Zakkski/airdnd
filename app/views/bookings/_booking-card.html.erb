@@ -1,0 +1,11 @@
+<div class="booking-card" style="background-image: linear-gradient(to right, rgba(0, 0, 0, .8), rgba(0, 0, 0, .4)), url('https://picsum.photos/500/500')">
+  <h2><%= booking.event.game %></h2>
+  <p><%= booking.event.date.strftime('%A, %b %d') %></p>
+  <h3><%= booking.event.location %></h3>
+  <div class="actions">
+    <%= link_to "View Event", booking.event, class: "view" %>
+    <%= link_to booking, method: :delete do %>
+      <i class="far fa-trash-alt"></i>
+    <% end %>
+  </div>
+</div>
