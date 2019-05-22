@@ -1,15 +1,28 @@
 <div class="event-card">
-  <%= image_tag"https://picsum.photos/400/100", class: "event-pic"%>
-  <div class="event-content">
-    <div class="left-content">
-      <h1>We are playing <%= event.game %></h1>
-      <p><%= event.description %></p>
-    </div>
-    <div class="right-content">
-      <p><%= event.date.strftime('%A, %b %d') %></p>
-      <p> Joins us at <%= event.location %></p>
-    </div>
-  <%= cl_image_tag event.user.profile.photo, gravity: "face", width: 85, height:85, crop: "thumb", class: "event-card-profile" %>
+
+  <div class="top-card">
+      <h1><%= event.game %></h1>
   </div>
+
+  <div class="bot-card">
+
+      <div class="event-card-details">
+        <p><%= event.user.profile.first_name %></p>
+      </div>
+      <div class="card-date">
+        <p> <%= event.date.strftime('%A, %b %d') %></p>
+      </div>
+      <div class="card-address">
+        <p><%= event.location %></p>
+      </div>
+      <%= cl_image_tag event.user.profile.photo, gravity: "face", width: 45, height:45, crop: "thumb", class: "event-card-profile" %></p>
+
+
+  </div>
+
+
+
+
+
 </div>
-     <!-- <%= link_to "See More", event_path(event) %> -->
+

@@ -1,32 +1,57 @@
-.event-card {
-  background-color: white;
-  border-radius: 5px;
-  color: #555555;
-  margin: 20px;
-  box-shadow: 0 0 8px rgba(0, 0, 0, .3);
-
+.event-card{
+  width: 250px;
+  height: 200px;
 }
 
-.event-card h1 {
-  font-size: 25px;
-}
-
-.event-card .event-content {
-  padding: 10px;
+.top-card{
   display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
+  justify-content: center;
+  background-image: linear-gradient(to left, rgba(30, 30, 30, 0.22), rgba(30, 30, 30, 0.53)), url("https://source.unsplash.com/random");
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+  align-items: center;
+  h1{
+    text-decoration: none;
+    font-size: 24px;
+    color: white;
+    padding: 29px;
+  }
+  border-radius: 3px;
+}
+
+.bot-card{
+  background-color: white;
+  padding: 20px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  border-radius: 3px;
   position: relative;
+  p{
+    text-decoration: none;
+    font-size: 13px;
+    color:  #808080;
+    margin-bottom: 6px;
+  }
 }
 
-.event-pic {
-  width: 100%;
-  border-radius: 5px 5px 0 0;
+.card-date{
+  p{
+    text-decoration: none;
+    font-size: 13px;
+    color:  #808080;
+  }
 }
 
-.event-card-profile {
+.event-card-details{
+  p{
+    font-size: 15px;
+  }
+}
+
+.event-card-profile{
   border-radius: 50%;
   position: absolute;
-  top: -85px;
-  right: 1px;
+  top: 18px;
+  left: 186px;
 }
