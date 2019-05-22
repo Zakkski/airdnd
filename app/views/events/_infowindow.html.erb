@@ -1,0 +1,8 @@
+<p> host:
+<%= event.user.profile.first_name %>
+</p>
+<p>
+date:
+<%= event.date.strftime('%A, %b %d') %>
+<%= link_to "view",event_path(event)  %>
+</p>
