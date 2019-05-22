@@ -12,3 +12,16 @@
 .navbar-lewagon .navbar-brand img {
   width: 40px;
 }
+
+.navbar-nav mr-auto{
+  position: relative;
+}
+
+#username{
+  position:absolute;
+  right: 160px;
+  top: 19px;
+  font-family: "Raleway", "Helvetica", "sans-serif";
+  color: #8A8A89;
+  font-weight: 300;
+}
