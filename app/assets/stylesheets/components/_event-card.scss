@@ -4,6 +4,7 @@
   color: #555555;
   margin: 20px;
   box-shadow: 0 0 8px rgba(0, 0, 0, .3);
+
 }
 
 .event-card h1 {
@@ -14,10 +15,18 @@
   padding: 10px;
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
+  position: relative;
 }
 
-.event-card img {
+.event-pic {
   width: 100%;
   border-radius: 5px 5px 0 0;
+}
+
+.event-card-profile {
+  border-radius: 50%;
+  position: absolute;
+  top: -85px;
+  right: 1px;
 }
