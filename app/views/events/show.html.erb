@@ -1,72 +1,81 @@
-<div class="container">
-  <div class="row justify-content-center">
-    <div class="col-12 col-lg-9">
-      <div class="row">
-        <h1 id = "event-description"><%= @event.description %></h1>
-      </div>
+<div class="banner">
 
-      <div class="row">
-        <% if @profile %>
-          <p>Hosted by: <span class = "events_desc_color"><%= @profile.first_name %></span></%></p>
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-12 col-lg-9">
+        <div class="row">
+          <h1 id = "event-description"><%= @event.description %></h1>
+        </div>
+
+        <div class="row">
+          <% if @profile %>
+            <p>Hosted by: <span class = "events-show-text"><%= @profile.first_name %></span></%></p>
+          <% end %>
+        </div>
+
+        <div class="row">
+          <br>
+          <p> Event Location:<span class = "events-show-text"> <%= @event.location %></span></p>
+          <br>
+        </div>
+        <div class="row">
+          <p>We are playing:<span class = "events-show-text"> <%= @event.game %> </span></p>
+          <br>
+        </div>
+        <div class="row">
+          <p>Game will be played on:<span class = "events-show-text"> <%= @event.date %></span></%></p>
+        </div>
+
+
+        <% if  current_user == @event.user %>
+
+          <% @bookings.each do |booking| %>
+            <%= simple_form_for([@event, booking]) do |f| %>
+              <%= "#{booking.user.profile.first_name} would like to Join the party" %>
+              <%= f.input :accepted %>
+              <%= f.submit "Accept #{booking.user.profile.first_name}"%>
+            <% end %>
+
+          <% end %>
+
+        <% else %>
+        <% if @event.bookings.any? %>
+
+          <% @event.bookings.each do |booking| %>
+              <% if  booking.accepted %>
+                <%= "#{booking.user.profile.first_name} is attending" %>
+              <% end %>
+          <% end %>
+
         <% end %>
-      </div>
-
-      <div class="row">
-        <br>
-        <p> Event Location:<span class = "events_desc_color"> <%= @event.location %></span></p>
-        <br>
-      </div>
-      <div class="row">
-        <p>We are playing:<span class = "events_desc_color"> <%= @event.game %> </span></p>
-        <br>
-      </div>
-      <div class="row">
-        <p>Game will be played on:<span class = "events_desc_color"> <%= @event.date %></span></%></p>
-      </div>
+          <%= simple_form_for([@event, @booking]) do |f| %>
+            <%= f.submit "Join the Party" %>
+          <% end %>
 
 
-      <% if  current_user == @event.user %>
+        <% if @booking.errors.any? %>
+          <%=  render 'shared/error-messages' %>
+        <% end %>
 
-        <% @bookings.each do |booking| %>
-          <%= simple_form_for([@event, booking]) do |f| %>
-            <%= booking.user.profile.first_name %>
-            <%= f.input :accepted %>
-            <%= f.submit %>
+        <% end %>
+
+        <%if policy(@event).edit?  %>
+
+          <%= link_to edit_event_path(@event) do %>
+            <i class="fas fa-edit"></i>
           <% end %>
 
         <% end %>
 
-      <% else %>
-      <% if @event.bookings.any? %>
+        <%if policy(@event).destroy?  %>
 
-        <h3>The following people are attending:</h3>
+          <%= link_to event_path(@event), method: :delete do%>
+          <i class="fas fa-trash"></i>
+          <% end %>
 
-        <% @event.bookings.each do |booking| %>
-            <% if  booking.accepted %>
-              <%= booking.user.profile.first_name %>
-            <% end %>
         <% end %>
 
-      <% end %>
-        <%= simple_form_for([@event, @booking]) do |f| %>
-          <%= f.submit "Join the Party" %>
-        <% end %>
-
-
-      <% if @booking.errors.any? %>
-        <%=  render 'shared/error-messages' %>
-      <% end %>
-
-      <% end %>
-
-      <%if policy(@event).edit?  %>
-        <p><%= link_to "edit", edit_event_path(@event) %></p>
-      <% end %>
-
-      <%if policy(@event).destroy?  %>
-        <p><%= link_to "💣", event_path(@event), method: :delete %></p>
-      <% end %>
-
+      </div>
     </div>
   </div>
 </div>
