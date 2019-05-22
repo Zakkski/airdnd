@@ -1,0 +1,9 @@
+<div class="booking-card" style="background-image: url('https://picsum.photos/500/500')">
+  <h2><%= booking.event.game %></h2>
+  <p><%= booking.event.date.strftime('%A, %b %d') %></p>
+  <h3><%= booking.event.location %></h3>
+  <%= link_to "View Event", booking.event %>
+  <%= link_to booking, method: :delete do %>
+    <i class="far fa-trash-alt"></i>
+  <% end %>
+</div>
