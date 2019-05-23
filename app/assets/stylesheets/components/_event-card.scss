@@ -1,63 +1,67 @@
-.event-card{
+.event-card {
+  height: 350px;
   width: 250px;
-  height: 200px;
-  margin: 30px 15px;
-}
-
-.event-list a {
-  margin-bottom: 33px;
-}
-
-.top-card{
-  display: flex;
-  height: 150px;
-  justify-content: center;
-  background-image: linear-gradient(to left, rgba(30, 30, 30, 0.22), rgba(30, 30, 30, 0.53)), url("https://source.unsplash.com/random");
-  background-size: cover;
-  background-position: center;
-  text-align: center;
-  align-items: center;
-  h1{
-    text-decoration: none;
-    font-size: 24px;
-    color: white;
-    padding: 29px;
-  }
-  border-radius: 3px;
-}
-
-.bot-card{
-  background-color: white;
-  padding: 20px;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  border-radius: 3px;
+  background-color: #D7D8D3;
+  margin: 25px;
+  padding: 25px 10px;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, .4);
+  color: #3f3f3f;
   position: relative;
-  p{
-    text-decoration: none;
-    font-size: 13px;
-    color:  #808080;
-    margin-bottom: 6px;
+  border: 10px solid #3f3f3f;
+
+  h1 {
+    font-size: 20px;
+    margin: 0;
+  }
+
+  p {
+    margin: 0;
+    font-size: 11px;
+  }
+
+  .titlebar {
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    border-radius: 25px;
+    padding: 3px 11px;
+    position: absolute;
+    top: 12px;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.8);
+  }
+
+  .element-icons img {
+    height: 20px;
+  }
+
+  .main-img {
+    width: 100%;
+    object-fit: cover;
+    border-radius: 0;
+    border: 2px solid #3f3f3f;
+  }
+
+  .infobar {
+    width: 80%;
+    text-align: center;
+    background-color: white;
+    border-radius: 25px;
+    padding: 2px;
+    position: absolute;
+    top: 183px;
+    left: 20px;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.8);
+  }
+
+  .description-box {
+    width: 90%;
+    height: 35%;
+    margin: 19px 0 0 0;
+    background-color: white;
   }
 }
 
-.card-date{
-  p{
-    text-decoration: none;
-    font-size: 13px;
-    color:  #808080;
-  }
-}
 
-.event-card-details{
-  p{
-    font-size: 15px;
-  }
-}
-
-.event-card-profile{
-  border-radius: 50%;
-  position: absolute;
-  top: 18px;
-  left: 186px;
-}

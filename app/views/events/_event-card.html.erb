@@ -1,18 +1,17 @@
 <div class="event-card">
-  <div class="top-card " >
-      <h1><%= event.game %></h1>
+  <div class="titlebar">
+    <h1><%= event.game %></h1>
+    <div class="element-icons">
+      <%= image_tag("light") %>
+      <%= image_tag("light") %>
+    </div>
   </div>
-  <div class="bot-card">
-      <div class="event-card-details">
-        <p><%= event.user.profile.first_name %></p>
-      </div>
-      <div class="card-date">
-        <p> <%= event.date.strftime('%A, %b %d') %></p>
-      </div>
-      <div class="card-address">
-        <p><%= event.location %></p>
-      </div>
-      <%= cl_image_tag event.user.profile.photo, gravity: "face", width: 45, height:45, crop: "thumb", class: "event-card-profile" %></p>
+  <%= image_tag("monsters/stone", class: "main-img") %>
+  <div class="infobar">
+    <p> <%= event.date.strftime('%A, %b %d') %></p>
+  </div>
+  <div class="description-box">
+    <p><%= event.description %></p>
   </div>
 </div>
 
