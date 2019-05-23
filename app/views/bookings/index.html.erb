@@ -3,8 +3,9 @@
 
 <div class="container">
   <h1>My Bookings: </h1>
+  <div class="event-list">
   <% @bookings.each do |booking| %>
     <%= render partial: 'booking-card', locals: { booking: booking } %>
   <% end %>
-
+  </div>
 </div>
