@@ -1,3 +1,6 @@
+<%= render 'shared/navbar' %>
+
+<div class="container">
 <h1>Edit <%= @event.description %></h1>
 
 <%= simple_form_for(@event) do |f| %>
@@ -9,3 +12,4 @@
 <% end %>
 
 <%= link_to "Home", root_path %>
+</div>
