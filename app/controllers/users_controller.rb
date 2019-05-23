@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   def show
-    @user = current_user
+    @user = User.find(params[:id])
     authorize @user
     @hosted_events = Event.where(user_id: @user)
     @profile = @user.profile

@@ -1,14 +1,12 @@
 
 <%= render 'shared/navbar' %>
 
-
-
-
 <% icon_array = ["light", "fire", "death", "forest", "water"] %>
+<div class="container">
 
-<div class="event-card">
+<div class="profile-card">
   <div class="titlebar">
-    <h1><%= "#{current_user.profile.first_name} #{current_user.profile.last_name}" %></h1>
+    <p><%= "#{@user.profile.first_name} #{@user.profile.last_name}" %></p>
     <div class="element-icons">
       <% rand(1..3).times do %>
         <%= image_tag("#{icon_array.sample}") %>
@@ -16,13 +14,17 @@
     </div>
   </div>
   <div class="main-img-container">
-    <%= cl_image_tag current_user.profile.photo, class: "main-img" %>
+    <%= cl_image_tag @user.profile.photo, class: "main-img" %>
   </div>
   <div class="infobar">
-    <p> <%= current_user.email %> %></p>
+    <p> <%= @user.email %></p>
   </div>
   <div class="description-box">
+    <p><%= "Power Level: #{rand(13..78)}" %></p>
 
-    <p></p>
+    <p><%= "Skill: Currywurst cooking: #{rand(4..17)}" %></p>
+
+
   </div>
+</div>
 </div>
