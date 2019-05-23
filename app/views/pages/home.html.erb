@@ -3,9 +3,7 @@
  <!--  <%= link_to   %>
    -->
 
-  <p class="home-login"><%= link_to "Login", new_user_session_path, data: { toggle: "modal", target: "#login-modal" } %>
-  <p class="home-signup"> <%= link_to "Sign up", new_user_registration_path %></p>
-
+  <%= link_to "Login", new_user_session_path, data: { toggle: "modal", target: "#login-modal" }, class: "home-btn home-login"%>
 
 
 
