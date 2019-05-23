@@ -2,8 +2,11 @@
 
  <!--  <%= link_to   %>
    -->
-
-  <%= link_to "Login", new_user_session_path, data: { toggle: "modal", target: "#login-modal" }, class: "home-btn home-login"%>
+  <% if user_signed_in? %>
+    <%= link_to "Log Out", destroy_user_session_path, method: :delete, class: "home-btn home-login"%>
+  <% else %>
+    <%= link_to "Log In", new_user_session_path, data: { toggle: "modal", target: "#login-modal" }, class: "home-btn home-login"%>
+  <% end %>
 
 
 
