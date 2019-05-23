@@ -5,8 +5,9 @@
   <div class="titlebar">
     <h1><%= event.game %></h1>
     <div class="element-icons">
-      <%= image_tag("#{icon_array.sample}") %>
-      <%= image_tag("#{icon_array.sample}") %>
+      <% rand(1..2).times do %>
+        <%= image_tag("#{icon_array.sample}") %>
+      <% end %>
     </div>
   </div>
   <div class="main-img-container">
