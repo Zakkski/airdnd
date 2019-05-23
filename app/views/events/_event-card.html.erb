@@ -1,18 +1,23 @@
+<% img_array = ["stone", "beast", "green", "snow", "drag", "rock", "spider", "sea", "sea2", "power", "drag2", "drag3", "demon", "horror"] %>
+<% icon_array = ["light", "fire", "death", "forest", "water"] %>
+
 <div class="event-card">
-  <div class="top-card " >
-      <h1><%= event.game %></h1>
+  <div class="titlebar">
+    <h1><%= event.game %></h1>
+    <div class="element-icons">
+      <%= image_tag("#{icon_array.sample}") %>
+      <%= image_tag("#{icon_array.sample}") %>
+    </div>
   </div>
-  <div class="bot-card">
-      <div class="event-card-details">
-        <p><%= event.user.profile.first_name %></p>
-      </div>
-      <div class="card-date">
-        <p> <%= event.date.strftime('%A, %b %d') %></p>
-      </div>
-      <div class="card-address">
-        <p><%= event.location %></p>
-      </div>
-      <%= cl_image_tag event.user.profile.photo, gravity: "face", width: 45, height:45, crop: "thumb", class: "event-card-profile" %></p>
+  <div class="main-img-container">
+    <%= image_tag("monsters/#{img_array.sample}", class: "main-img") %>
+    <% img_array %>
+  </div>
+  <div class="infobar">
+    <p> <%= event.date.strftime('%A, %b %d') %></p>
+  </div>
+  <div class="description-box">
+    <p><%= event.description %></p>
   </div>
 </div>
 

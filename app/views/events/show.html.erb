@@ -63,6 +63,16 @@
     </div>
 
 
+
+          <% @bookings.each do |booking| %>
+            <%= simple_form_for([@event, booking]) do |f| %>
+              <%= "#{booking.user.profile.first_name} would like to Join the party" %>
+              <%= f.input :accepted %>
+              <%= f.submit "Accept #{booking.user.profile.first_name}"%>
+            <% end %>
+        <% end %>
+        <% end %>
+
     <div class="column-three">
     <div class="player-list">
 
@@ -97,3 +107,4 @@
 
 
 </div>
+
