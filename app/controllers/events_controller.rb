@@ -1,8 +1,7 @@
 class EventsController < ApplicationController
-
   before_action :authenticate_user!, except: [:index, :show]
-  def show
 
+  def show
     @booking = Booking.new
     @event = Event.find(params[:id])
     @bookings = @event.bookings
@@ -13,6 +12,16 @@ class EventsController < ApplicationController
   def new
     @event = Event.new
     authorize @event
+    @games = ["Magic The Gathering",
+             "Dungeons and Dragons",
+             "Warhammer 40K",
+             "Risk",
+             "World of Darkness",
+             "Settlers of Catan",
+             "Cards Against Humanity",
+             "Group Board Game",
+             "Modern Game",
+             "Fantasy Game"]
   end
 
   def index
@@ -23,7 +32,6 @@ class EventsController < ApplicationController
         lat: event.latitude,
         lng: event.longitude,
         infoWindow: render_to_string(partial: "infowindow", locals: { event: event })
-
       }
     end
   end
@@ -51,8 +59,7 @@ class EventsController < ApplicationController
   def update
     @event = Event.find(params[:id])
     authorize @event
-    @event.update(event_params)
-    if @event.update
+    if @event.update(event_params)
       redirect_to @event
     else
       render "edit"

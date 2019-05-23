@@ -1,0 +1,134 @@
+.page-wrapper {
+  margin: 0 auto;
+  padding: 25px;
+}
+
+
+.event-show-card {
+  text-align: center;
+  background-image: image-url('event-show-background.jpeg');
+  background-size: cover;
+  height: 100%;
+  width: 1050px;
+  margin: 25px;
+  display: flex;
+  box-shadow: 5px 0px 9px -1px rgba(153,148,153,1);
+
+}
+
+
+.game-image {
+}
+
+.game-image img {
+  border-radius: 3px;
+  height: 345px;
+  width: 345px;
+}
+
+.host-details {
+  display: flex;
+  padding: 8px;
+  height: 200px;
+  text-align: center;
+  a {
+    text-decoration: none
+  }
+  img {
+    height: 100px;
+    width: 100px;
+    border-radius: 3px;
+  }
+
+}
+
+.host-actions {
+  font-size: 32px;
+  padding: 8px;
+  height: 200px;
+  text-align: center;
+}
+.column-one, .column-two, .column-three, {
+  padding: 5px;
+  width: 350px;
+}
+
+
+.game-name {
+  height: 100px;
+  align-items: center;
+  text-align: center;
+  border-bottom: 3px solid black;
+
+}
+
+.game-details {
+  height: 250px;
+
+  padding: 8px;
+
+  font-size: 22px;
+}
+
+.date{
+  padding: 3px;
+}
+
+.address {
+  padding: 3px;
+}
+
+.game-description {
+  height: 400px;
+  text-align: justify;
+  border: 2px solid black;
+  border-radius: 4px;
+  padding: 3px;
+}
+
+
+
+.player-list  {
+  text-align: center;
+
+}
+.player-card {
+  display: flex;
+  border: 1px solid black;
+  border-radius: 5px;
+  box-shadow: 5px 0px 9px -1px rgba(153,148,153,1);
+}
+
+.player-img {
+  width: 45px;
+
+  img {
+    height: 45px;
+    border-radius: 50%;
+  }
+}
+
+.player-details {
+  text-align: center;
+  font-size: 14px;
+}
+
+.player-status {
+  font-size: 12px;
+}
+
+.booking-actions {
+  padding: 15px;
+  background-color: blue;
+  border-radius: 15px;
+}
+
+
+
+
+
+
+
+
+
+

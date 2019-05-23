@@ -1,8 +1,8 @@
 <div class="container">
+  <h2>My Events</h2>
   <% @events.each do |event| %>
-  <article>
-   <%= link_to event.description, event_path(event), class: "btn btn-primary m-2" %>
-  </article>
-
+   <%= link_to event, style: "text-decoration: none" do %>
+      <%= render partial: 'event-card', locals: { event: event } %>
+    <% end %>
   <% end %>
 </div>

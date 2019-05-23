@@ -1,36 +1,17 @@
-<div class="banner">
+<%= render "shared/navbar" %>
 
-  <div class="banner-info">
-    <h1>Events</h1>
-  </div>
+<div class="index-banner">
+  <h1>Your events</h1>
 
-  <div class="row align-items-start">
+</div>
 
-    <div class="event-list col-6">
+<div class="container">
+  <div class="event-list">
       <% @events.each do |event| %>
         <%= link_to event_path(event), style: "text-decoration: none" do %>
           <%= render partial: "event-card", locals: {event: event} %>
         <% end %>
       <% end %>
-    </div>
-
-    <div class="event-map col-6" id="map"
-
-        style="width: 100%;
-        height: 600px;
-        position: relative;
-        display: block;
-        "
-        data-markers="<%= @markers.to_json %>"
-        data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
-
-
-    </div>
-
   </div>
-
-
-
-
-
 </div>
+

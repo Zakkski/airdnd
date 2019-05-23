@@ -3,8 +3,8 @@
   padding: 40px 20px;
   background-color: white;
   margin: 40px auto;
-  width: 400px;
-  box-shadow: 0 0 8px rgba(0, 0, 0, .2);
+  width: 100%;
+  // box-shadow: 0 0 8px rgba(0, 0, 0, .2);
 
   img {
     width: 20%;
@@ -66,4 +66,8 @@
       color: #7C7C7C;
     }
   }
+}
+
+.close-white {
+  color: white;
 }

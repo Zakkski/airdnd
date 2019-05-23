@@ -1,11 +1,18 @@
-<div class="container">
-<%= simple_form_for(@event) do |f| %>
-  <%= f.input :game %>
-  <%= f.input :description %>
-  <%= f.input :location %>
-  <%= f.input :date %>
-  <%= f.submit %>
-<% end %>
+<%= render "shared/navbar" %>
+<div class="">
 
-<%= link_to "Home", root_path %>
+  <div class="new-event-form">
+
+    <h1>Can We Play a Game?</h1>
+    <br>
+  <%= simple_form_for(@event) do |f| %>
+    <%= f.input :game, collection: @games, label:"What game will we play?"%>
+    <%= f.input :location, label: "", placeholder: "Where will we play?" %>
+    <%= f.input :description , label: "What is the game about?"%>
+    <%= f.input :date, as: :date, html5: true, input_html: {size:10} %>
+    <%= f.submit "Schedule a Game", class: "new-event-button"%>
+  <% end %>
+
+  <%= link_to "Cancel", root_path, class: "banner-btn fixed-bottom" %>
+  </div>
 </div>

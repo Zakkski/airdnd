@@ -1,32 +1,90 @@
-.event-card {
-  background-color: white;
-  border-radius: 5px;
-  color: #555555;
-  margin: 20px;
-  box-shadow: 0 0 8px rgba(0, 0, 0, .3);
-
-}
-
-.event-card h1 {
-  font-size: 25px;
-}
-
-.event-card .event-content {
-  padding: 10px;
+.event-list {
   display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.event-card {
+  height: 350px;
+  width: 250px;
+  background-color: #D7D8D3;
+  margin: 25px;
+  padding: 25px 10px;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, .4);
+  color: #3f3f3f;
   position: relative;
+  border: 10px solid #3f3f3f;
+
+  .main-img-container {
+    border: 2px solid #3f3f3f;
+    overflow: hidden;
+    height: 60%;
+  }
+
+  .main-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 0;
+    transition: transform .5s, filter .5s ease-in-out;
+    filter: grayscale(80%);
+  }
+
+  &:hover {
+    .main-img {
+      filter: grayscale(0);
+      transform: scale(1.1);
+    }
+  }
+
+  h1 {
+    font-size: 12px;
+    margin: 0;
+  }
+
+  p {
+    margin: 0;
+    font-size: 11px;
+  }
+
+  .titlebar {
+    z-index: 10;
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    border-radius: 25px;
+    padding: 3px 11px;
+    position: absolute;
+    top: 12px;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.8);
+  }
+
+  .element-icons img {
+    height: 17px;
+  }
+
+
+  .infobar {
+    width: 80%;
+    text-align: center;
+    background-color: white;
+    border-radius: 25px;
+    padding: 2px;
+    position: absolute;
+    top: 183px;
+    left: 20px;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.8);
+  }
+
+  .description-box {
+    height: 35%;
+    margin: 24px auto;
+    background-color: white;
+    padding: 10px;
+    overflow: hidden;
+  }
 }
 
-.event-pic {
-  width: 100%;
-  border-radius: 5px 5px 0 0;
-}
 
-.event-card-profile {
-  border-radius: 50%;
-  position: absolute;
-  top: -85px;
-  right: 1px;
-}
