@@ -7,7 +7,16 @@ img_array = ["stone_gszij2", "beast_q1zm9g", "green_nhtvia", "snow_u7avxm", "dra
                  "spider_ueutid", "sea_iweyjv", "sea2_g9fu1p", "power_lzg5by", "drag2_mll4uf",
                  "drag3_ewgrag", "demon_qvpjzt", "horror_ayjvoq"]
 
-
+games = ["Magic The Gathering",
+             "Dungeons and Dragons",
+             "Warhammer 40K",
+             "Risk",
+             "World of Darkness",
+             "Settlers of Catan",
+             "Cards Against Humanity",
+             "Group Board Game",
+             "Modern Game",
+             "Fantasy Game"]
 
 u = User.create(email: "user@email.com", password: "password")
 p = Profile.new(first_name: "User", last_name: "Person")
@@ -33,7 +42,7 @@ puts "create Users"
   event = Event.new(
     location: Faker::Movies::HitchhikersGuideToTheGalaxy.location,
     description: Faker::TvShows::BojackHorseman.tongue_twister,
-    game: Faker::Books::Lovecraft.tome,
+    game: games.sample,
     user: User.all.sample,
     date: "19900505",
     photo: img_array.sample,
