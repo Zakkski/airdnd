@@ -32,6 +32,13 @@
             <% end %>
           <% end %>
 
+          <% if current_user != @event.user %>
+            <%= simple_form_for([@event, @booking]) do |f| %>
+                <%= f.submit "JOIN THE PARTY" %>
+            <% end %>
+
+          <% end %>
+
         </div>
 
 
@@ -87,7 +94,7 @@
             <div class="booking-control">
               <% if  current_user == @event.user%>
                 <div class="booking-actions">
-                        <%= link_to "ACCEPT/DECLINE", event_booking([@event, booking])%>
+                        <%= link_to "ACCEPT/DECLINE", event_booking_path([@event, booking]), method: "patch")%>
                 </div>
               <% end %>
             </div>
