@@ -1,20 +1,43 @@
+<head>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300" type="text/css" />
+</head>
+<body>
+  <div class="back">
+  <div class="banner">
+    <div class="banner-info">
 
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-12 col-lg-9">
 
-<div class="banner">
+            <div class="row">
+             <h1>AirD&D</h1>
+            </div>
 
+            <div class="row">
+             <h3>Together we stand!</h3>
+            </div>
 
+            <div class="row">
+             <p class="banner-btn"><%= link_to "Discover", events_path %></p>
+            </div>
 
-  <div class="banner-info">
-    <h1>AirD&D</h1>
-    <h3>Together we stand!</h3>
+            <div class="row">
+             <p class="banner-btn"><%= link_to "New Event", new_event_path %></p>
+            </div>
 
-    <p class="banner-btn"><%= link_to "Discover", events_path %></p>
-    <p class="banner-btn"><%= link_to "New Event", new_event_path %></p>
+            <div class="row">
+             <div class= "airdnd-logo-svg">
+                <%= image_tag('airdnd.svg') %>
+              </div>
+            </div>
 
+          </div>
+        </div>
+      </div>
+
+    </div>
   </div>
-
-
-
-
-</div>
+  </div>
+</body>
 
