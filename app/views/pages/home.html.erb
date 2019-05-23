@@ -1,10 +1,18 @@
 <div class="banner">
+
+ <!--  <%= link_to   %>
+   -->
+
   <p class="home-login"><%= link_to "Login", new_user_session_path, data: { toggle: "modal", target: "#login-modal" } %>
   <p class="home-signup"> <%= link_to "Sign up", new_user_registration_path %></p>
 
 
 
+
   <div class="banner-info">
+    <div id="logo">
+      <%= image_tag('logo.svg') %>
+    </div>
     <h1 class="dungeon-text">Advanced Air Dungeons and Dragons</h1>
     <h3>Never Split up the Party</h3>
 
