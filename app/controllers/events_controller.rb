@@ -28,7 +28,7 @@ class EventsController < ApplicationController
     if params[:query].present?
       @events = policy_scope(Event).search_by_game_and_description(params[:query])
     else
-      @events = policy_scope(Event).where.not(latitude: nil, longitude: nil)
+      @events = policy_scope(Event).order(created_at: :desc)
     end
 
     @markers = @events.map do |event|
@@ -45,8 +45,12 @@ class EventsController < ApplicationController
   end
 
   def create
+    img_array = ["stone_gszij2", "beast_q1zm9g", "green_nhtvia", "snow_u7avxm", "drag_fsgr1q", "rock_wnbh0s",
+                 "spider_ueutid", "sea_iweyjv", "sea2_g9fu1p", "power_lzg5by", "drag2_mll4uf",
+                 "drag3_ewgrag", "demon_qvpjzt", "horror_ayjvoq"]
     @event = Event.new(event_params)
     authorize @event
+    @event.photo = img_array.sample
     @event.user = current_user
     if @event.save
       redirect_to event_path(@event) # Needs to redirect to show

@@ -1,4 +1,3 @@
-<% img_array = ["stone", "beast", "green", "snow", "drag", "rock", "spider", "sea", "sea2", "power", "drag2", "drag3", "demon", "horror"] %>
 <% icon_array = ["light", "fire", "death", "forest", "water"] %>
 
 <div class="event-card">
@@ -11,8 +10,7 @@
     </div>
   </div>
   <div class="main-img-container">
-    <%= image_tag("monsters/#{img_array.sample}", class: "main-img") %>
-    <% img_array %>
+    <%= cl_image_tag event.photo, class: "main-img" %>
   </div>
   <div class="infobar">
     <p> <%= event.date.strftime('%A, %b %d') %></p>
