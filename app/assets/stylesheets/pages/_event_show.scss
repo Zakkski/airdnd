@@ -138,9 +138,65 @@
   background-color: #D1CA98;
 }
 
+.show-bck-btn{
+  height: 40px;
+  margin: 10px 0px;
+  border: 0.5px solid black;
+  display: flex;
+  background-color: #EDDEA4;
+  padding: 0 16px;
+  border-radius: 20px;
+  width: 135px;
+  text-decoration: none;
+  margin-left: auto;
+  &:hover img{
+    transform: rotate(90deg);
+  }
+  &:hover{
+    text-decoration: none;
+  }
+  a{
+    height:100%;
+    align-items: center;
+    text-decoration: none;
+  }
+}
+
+.show-bck-btn-icon{
+  height: 100%;
+  img{
+    height: 100%;
+    margin-right: 18px;
+    transition: transform 0.2s ease;
+  }
+
+}
+
+.show-bck-btn-text{
+  p{
+    height: 100%;
+    margin: 0;
+    line-height: 2.4;
+    text-decoration: none;
+    color: grey;
+    &:hover{
+      text-decoration: none;
+    }
+  }
+}
+
+.show-bck-btn-text > p {
+  text-decoration: none;
+}
 
 
+.show-bck-btn-text > p:hover {
+  text-decoration: none;
+}
 
+a:hover {
+  text-decoration: none;
+}
 
 
 
