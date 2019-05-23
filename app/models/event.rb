@@ -8,7 +8,7 @@ class Event < ApplicationRecord
 
   include PgSearch
   pg_search_scope :search_by_game_and_description,
-                  against: [:game, :description],
+                  against: [:game, :description, :location],
                   using: {
                     tsearch: { prefix: true }
                   }
