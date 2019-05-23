@@ -1,38 +1,18 @@
 <%= render "shared/navbar" %>
-<div class="banner">
+
 <h1 class="event-title">Events</h1>
 
-  <div class="banner-info">
-  </div>
-
-  <div class="row align-items-start">
-
-    <div class="event-list col-6">
-      <div class="d-flex flex-wrap">
-        <% @events.each do |event| %>
-          <%= link_to event_path(event), style: "text-decoration: none" do %>
-            <%= render partial: "event-card", locals: {event: event} %>
-          <% end %>
+<div class="row align-items-start">
+  <div class="event-list col-6">
+    <div class="d-flex flex-wrap">
+      <% @events.each do |event| %>
+        <%= link_to event_path(event), style: "text-decoration: none" do %>
+          <%= render partial: "event-card", locals: {event: event} %>
         <% end %>
-      </div>
+      <% end %>
     </div>
-
-    <div class="event-map col-6" id="map"
-
-        style="width: 100%;
-        height: 100vh;
-        position: sticky;
-        "
-        data-markers="<%= @markers.to_json %>"
-        data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
-
-
-    </div>
-
   </div>
-
-
-
-
-
 </div>
+
+
+
