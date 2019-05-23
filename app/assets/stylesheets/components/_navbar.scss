@@ -10,7 +10,12 @@
 }
 
 .navbar-lewagon .navbar-brand img {
+  transition: transform .8s ease;
   width: 40px;
+
+  &:hover {
+    transform: rotate(180deg);
+  }
 }
 
 .navbar-nav mr-auto{
