@@ -53,17 +53,31 @@
   width: 350px;
 }
 
+.col2-top{
+  border: 0.2px solid black;
+  box-shadow: 0 0 3.1px black;
+}
 
 .game-name {
   height: 100px;
   align-items: center;
   text-align: center;
-  border-bottom: 3px solid black;
+  border-bottom: 1px solid black;
+  background-color: #DDDDDD;
+  opacity: 0.8;
+  h1{
+    line-height: 96px;
+    height: 100%;
+    margin: 0;
+    font-size: 34px;
+    border-top-radius: 2px;
+    border-radius: 12px 12px 0px 0px;
+  }
 
 }
 
 .game-details {
-  height: 250px;
+  height: 117px;
 
   padding: 8px;
 
@@ -76,6 +90,7 @@
 
 .address {
   padding: 3px;
+  font-size: 18px;
 }
 
 .game-description {
