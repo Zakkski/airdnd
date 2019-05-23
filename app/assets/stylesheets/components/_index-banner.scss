@@ -2,4 +2,18 @@
   height: 40vh;
   background-size: cover;
   background-image: url(asset_path("index_banner"));
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  .search-bar {
+    width: 50%;
+
+    input {
+      border-radius: 25px;
+      text-align: center;
+      padding: 23px;
+    }
+  }
 }
+
