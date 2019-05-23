@@ -1,13 +1,15 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans|Proza+Libre&display=swap');
 
 .banner{
-  background-image: linear-gradient(to left, rgba(30, 30, 30, 0.5), rgba(30, 30, 30, 0.7)), asset-url("banner_image");
+  background-image: linear-gradient(to left, rgba(30, 30, 30, 0.5), rgba(30, 30, 30, 0.8)), asset-url("banner_image");
+
   background-size: cover;
   background-position: center;
   height: 100vh;
   color: white;
   padding: 13% 15%;
   font-family: 'Proza Libre', sans-serif;
+  position: relative;
 }
 
 a:hover {
@@ -45,7 +47,7 @@ a:hover {
   color: white;
   background-color: #D1CA98;
   border-radius: 27px;
-  width: 189px;
+  width: 400px;
   height: 46px;
   p{
     margin: 0;
@@ -109,6 +111,8 @@ a:hover {
 
 .banner-info{
   text-align:center;
+  position: static;
+
 }
 
 .event-title {
