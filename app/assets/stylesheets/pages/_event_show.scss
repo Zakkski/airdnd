@@ -1,11 +1,82 @@
-.events-show-text {
-  color: #C7D3BF;
-  font-family: "Raleway", "Helvetica", "sans-serif";
-  font-size: 15px;
+.page-wrapper {
+  margin: 0 auto;
+  padding: 25px;
 }
 
-i {
- color: white;
- font-size: 30px;
- margin: 9px;
+
+.event-show-card {
+  text-align: center;
+  background-image: image-url('event-show-background.jpeg');
+  background-size: cover;
+  height: 100vh;
+  margin: 25px;
+  display: flex;
+  box-shadow: 5px 0px 9px -1px rgba(153,148,153,1);
+
+}
+
+
+.game-image {
+}
+
+.game-image img {
+  border-radius: 3px;
+  height: 345px;
+  width: 345px;
+}
+
+.host-details {
+  padding: 8px;
+  height: 400px;
+  text-align: center;
+
+
+}
+
+.host-actions {
+
+}
+.column-one, .column-two, .column-three, {
+  padding: 5px;
+  width: 350px;
+}
+
+
+.game-name {
+  height: 100px;
+  align-items: center;
+  text-align: center;
+  border-bottom: 3px solid black;
+
+}
+
+.game-details {
+  height: 250px;
+
+  padding: 8px;
+
+  font-size: 22px;
+}
+
+.date{
+  padding: 3px;
+}
+
+.address {
+  padding: 3px;
+}
+
+.game-description {
+  height: 400px;
+  text-align: justify;
+  border: 2px solid black;
+  border-radius: 4px;
+  padding: 3px;
+}
+
+
+
+.player-list  {
+  text-align: center;
+
 }
