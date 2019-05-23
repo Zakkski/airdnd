@@ -12,6 +12,16 @@ class EventsController < ApplicationController
   def new
     @event = Event.new
     authorize @event
+    @games = ["Magic The Gathering",
+             "Dungeons and Dragons",
+             "Warhammer 40K",
+             "Risk",
+             "World of Darkness",
+             "Settlers of Catan",
+             "Cards Against Humanity",
+             "Group Board Game",
+             "Modern Game",
+             "Fantasy Game"]
   end
 
   def index

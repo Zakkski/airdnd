@@ -1,82 +1,39 @@
 
+<%= render "navbar" %>
+<div class="banner">
 
-<div class="container">
-  <div class="row justify-content-center">
-    <div class="col-12 col-lg-9">
-      <div class="row">
-        <h1 id = "event-description"><%= @event.description %></h1>
-      </div>
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-12 col-lg-9">
+        <div class="row">
+          <h1 id = "event-description"><%= @event.description %></h1>
+        </div>
 
-      <div class="row">
-        <% if @profile %>
-          <p>Hosted by: <span class = "events-show-text"><%= @profile.first_name %></span></%></p>
-        <% end %>
-      </div>
-
-      <div class="row">
-        <br>
-        <p> Event Location:<span class = "events-show-text"> <%= @event.location %></span></p>
-        <br>
-      </div>
-      <div class="row">
-        <p>We are playing:<span class = "events-show-text"> <%= @event.game %> </span></p>
-        <br>
-      </div>
-      <div class="row">
-        <p>Game will be played on:<span class = "events-show-text"> <%= @event.date %></span></%></p>
-      </div>
-
-
-      <% if  current_user == @event.user %>
-
-        <% @bookings.each do |booking| %>
-          <%= simple_form_for([@event, booking]) do |f| %>
-            <%= "#{booking.user.profile.first_name} would like to Join the party" %>
-            <%= f.input :accepted %>
-            <%= f.submit "Accept #{booking.user.profile.first_name}"%>
+        <div class="row">
+          <% if @profile %>
+            <p>Hosted by: <span class = "events-show-text"><%= @profile.first_name %></span></%></p>
           <% end %>
+        </div>
 
-        <% end %>
+        <div class="row">
+          <br>
+          <p> Event Location:<span class = "events-show-text"> <%= @event.location %></span></p>
+          <br>
+        </div>
+        <div class="row">
+          <p>We are playing:<span class = "events-show-text"> <%= @event.game %> </span></p>
+          <br>
+        </div>
+        <div class="row">
+          <p>Game will be played on:<span class = "events-show-text"> <%= @event.date %></span></%></p>
+        </div>
 
-      <% else %>
-      <% if @event.bookings.any? %>
 
-        <% @event.bookings.each do |booking| %>
-            <% if  booking.accepted %>
-              <%= "#{booking.user.profile.first_name} is attending" %>
+        <% if  current_user == @event.user %>
+
+          <% @bookings.each do |booking| %>
+            <%= simple_form_for([@event, booking]) do |f| %>
+              <%= "#{booking.user.profile.first_name} would like to Join the party" %>
+              <%= f.input :accepted %>
+              <%= f.submit "Accept #{booking.user.profile.first_name}"%>
             <% end %>
-        <% end %>
-
-      <% end %>
-        <%= simple_form_for([@event, @booking]) do |f| %>
-          <%= f.submit "Join the Party" %>
-        <% end %>
-
-
-      <% if @booking.errors.any? %>
-        <%=  render 'shared/error-messages' %>
-      <% end %>
-
-      <% end %>
-
-      <%if policy(@event).edit?  %>
-
-        <%= link_to edit_event_path(@event) do %>
-          <i class="fas fa-edit"></i>
-        <% end %>
-
-      <% end %>
-
-      <%if policy(@event).destroy?  %>
-
-        <%= link_to event_path(@event), method: :delete do%>
-        <i class="fas fa-trash"></i>
-        <% end %>
-
-      <% end %>
-
-    </div>
-  </div>
-</div>
-
-

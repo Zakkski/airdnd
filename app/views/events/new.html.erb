@@ -1,11 +1,12 @@
-<div class="banner">
+<%= render "shared/navbar" %>
+<div class="">
 
   <div class="new-event-form">
 
     <h1>Can We Play a Game?</h1>
     <br>
   <%= simple_form_for(@event) do |f| %>
-    <%= f.input :game, label:"What game will we play?"%>
+    <%= f.input :game, collection: @games, label:"What game will we play?"%>
     <%= f.input :location, label: "", placeholder: "Where will we play?" %>
     <%= f.input :description , label: "What is the game about?"%>
     <%= f.input :date, as: :date, html5: true, input_html: {size:10} %>
