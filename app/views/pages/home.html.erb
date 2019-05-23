@@ -1,44 +1,81 @@
 
+ <div class="back">
+  <div class="banner">
+    <div class="banner-info">
+
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-12 col-lg-9">
+
+            <div class="row">
+             <h1>AirD&D</h1>
+            </div>
+
+            <div class="row">
+             <h3>Together we stand!</h3>
+            </div>
+
+            <div class="row">
+             <p class="banner-btn"><%= link_to "Discover", events_path %></p>
+            </div>
+
+            <div class="row">
+             <p class="banner-btn"><%= link_to "New Event", new_event_path %></p>
+            </div>
+
+            <div class="row">
+             <div class= "airdnd-logo-svg">
+                <%= image_tag('airdnd.svg') %>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  </div>
 
 <div class="banner">
 
 
-
+<!-- 
   <div class="banner-info">
     <h1 class="dungeon-text">Advanced Air Dungeons and Dragons</h1>
     <h3>Never Split up the Party</h3>
 
     <div class="home-btns">
-      <p><%= link_to events_path do %>
+      <p><%#= link_to events_path do %>
           <div class="home-btn">
             <div class="home-btn-icon">
-              <%= image_tag("airdnd") %>
+              <%#= image_tag("airdnd") %>
             </div>
             <div class="home-btn-text">
               <p>Join a Party</p>
             </div>
           </div>
-        <% end %>
+        <%# end %>
       </p>
       <p>
-        <% if current_user %>
-          <%= link_to new_event_path do %>
+        <%# if current_user %>
+          <%#= link_to new_event_path do %>
             <div class="home-btn">
               <div class="home-btn-icon">
-                <%= image_tag("airdnd") %>
+                <%#= image_tag("airdnd") %>
               </div>
               <div class="home-btn-text">
                 <p>Recruit Players!</p>
               </div>
             </div>
-          <% end %>
-        <% else %>
-          <%= link_to "Find Players", new_user_session_path, data: { toggle: "modal", target: "#login-modal" } %>
-        <% end %>
+          <%# end %>
+        <%# else %>
+          <%#= link_to "Find Players", new_user_session_path, data: { toggle: "modal", target: "#login-modal" } %>
+        <%# end %>
       </div>
   </div>
 
 
 
-</div>
+</div> -->
 
