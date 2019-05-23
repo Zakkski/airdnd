@@ -37,7 +37,7 @@ class EventsController < ApplicationController
     #     lng: event.longitude,
     #     infoWindow: render_to_string(partial: "infowindow", locals: { event: event })
     #   }
-    end
+    # end
   end
 
   def my_events
