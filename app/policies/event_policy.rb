@@ -25,6 +25,10 @@ class EventPolicy < ApplicationPolicy
     true
   end
 
+  def near_me?
+    true
+  end
+
   def my_events?
     true
   end

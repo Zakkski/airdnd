@@ -82,6 +82,10 @@ class EventsController < ApplicationController
     redirect_to events_path
   end
 
+  def near_me
+    @events = Event.near([current_user.profile.latitude, current_user.profile.longitude], 15)
+  end
+
   private
 
   def event_params

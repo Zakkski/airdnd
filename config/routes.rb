@@ -6,6 +6,9 @@ Rails.application.routes.draw do
     collection do
       get 'my_events'
     end
+    member do
+      get 'near-me'
+    end
 end
 
   resources :users, only: [:show]
