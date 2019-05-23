@@ -47,14 +47,16 @@
 
     <div class="column-two">
 
-      <div class="game-name">
-        <h1><%= @event.game %></h1>
-      </div>
-
-      <div class="game-details">
-        <div class="date">
-          <%= @event.date.strftime('%A, %b %d') %>
+      <div class="col2-top">
+        <div class="game-name">
+          <h1><%= @event.game %></h1>
         </div>
+
+        <div class="game-details">
+          <div class="date">
+            <%= @event.date.strftime('%A, %b %d') %>
+          </div>
+      </div>
 
         <div class="address">
           <%= @event.location %>
