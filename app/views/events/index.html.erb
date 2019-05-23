@@ -1,21 +1,23 @@
 <%= render "shared/navbar" %>
 
-<div class="index-banner">
-  <%= form_tag events_path, method: :get, class: "search-bar" do %>
-    <%= text_field_tag :query,
-      params[:query],
-      class: "form-control",
-      placeholder: "Search for Events" %>
-  <% end %>
-</div>
+<div class="event-full-container">
+  <div class="index-banner">
+    <%= form_tag events_path, method: :get, class: "search-bar" do %>
+      <%= text_field_tag :query,
+        params[:query],
+        class: "form-control",
+        placeholder: "Search for Events" %>
+    <% end %>
+  </div>
 
-<div class="container">
-  <div class="event-list">
-      <% @events.each do |event| %>
-        <%= link_to event_path(event), style: "text-decoration: none" do %>
-          <%= render partial: "event-card", locals: {event: event} %>
+  <div class="container">
+    <div class="event-list">
+        <% @events.each do |event| %>
+          <%= link_to event_path(event), style: "text-decoration: none" do %>
+            <%= render partial: "event-card", locals: {event: event} %>
+          <% end %>
         <% end %>
-      <% end %>
+    </div>
   </div>
 </div>
 
