@@ -1,22 +1,28 @@
 
-<div class="banner">
-  <%= link_to "back", events_path, class: "banner-btn"  %>
-  <div class="banner-info">
-  </div>
+<%= render 'shared/navbar' %>
+
+
+
+
+<% icon_array = ["light", "fire", "death", "forest", "water"] %>
+
+<div class="event-card">
+  <div class="titlebar">
     <h1><%= "#{current_user.profile.first_name} #{current_user.profile.last_name}" %></h1>
-    <h3><%= current_user.email %></h3>
-    <p class="profile-address"><%= current_user.profile.address %></p>
-
-  <div class="row">
-    <%= cl_image_tag @profile.photo, height: 350, width: 350, crop: :fill %>
-    <div>
-      <p class="profile-event">Hosted Events</p>
-      <% @current_user.events.each do |event| %>
-        <p class="profile-event">
-          <%= event.description %> <%= event.date %>
-        </p>
-
+    <div class="element-icons">
+      <% rand(1..3).times do %>
+        <%= image_tag("#{icon_array.sample}") %>
       <% end %>
     </div>
+  </div>
+  <div class="main-img-container">
+    <%= cl_image_tag current_user.profile.photo, class: "main-img" %>
+  </div>
+  <div class="infobar">
+    <p> <%= current_user.email %> %></p>
+  </div>
+  <div class="description-box">
+
+    <p></p>
   </div>
 </div>

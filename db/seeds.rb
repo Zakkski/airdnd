@@ -7,6 +7,7 @@ img_array = ["wh40k_siuqno","stone_gszij2", "beast_q1zm9g", "green_nhtvia", "sno
                  "spider_ueutid", "sea_iweyjv", "sea2_g9fu1p", "power_lzg5by", "drag2_mll4uf",
                  "drag3_ewgrag", "demon_qvpjzt", "horror_ayjvoq", "40k2_rhr1zd"]
 
+
 games = ["Magic The Gathering",
              "Dungeons and Dragons",
              "Warhammer 40K",
