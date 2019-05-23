@@ -25,7 +25,7 @@ class EventsController < ApplicationController
   end
 
   def index
-    @events = policy_scope(Event).where.not(latitude: nil, longitude: nil)
+    @events = policy_scope(Event).order(created_at: :desc)
 
     @markers = @events.map do |event|
       {
