@@ -1,9 +1,12 @@
 <%= render 'shared/navbar' %>
+
 <div class="container">
   <h2>My Events</h2>
-  <% @events.each do |event| %>
-   <%= link_to event, style: "text-decoration: none" do %>
-      <%= render partial: 'event-card', locals: { event: event } %>
-    <% end %>
-  <% end %>
+  <div class="event-list">
+      <% @events.each do |event| %>
+        <%= link_to event_path(event), style: "text-decoration: none" do %>
+          <%= render partial: "event-card", locals: {event: event} %>
+        <% end %>
+      <% end %>
+  </div>
 </div>
