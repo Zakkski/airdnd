@@ -1,3 +1,5 @@
+
+<%= link_to "back", events_path, class: "banner-btn"  %>
 <div class="page-wrapper">
 
 
@@ -5,41 +7,41 @@
 
     <div class="column-one">
       <div class="game-image">
-        <%= image_tag "dnd.png", alt: "alttext" %>
+        <%= image_tag "Fantasy Game.jpeg", alt: "alttext" %>
       </div>
 
       <div class="host-details">
-        <%= cl_image_tag @profile.photo %>
-
+        <%= cl_image_tag @event.user.profile.photo %>
+        <h3>Your Host</h3>
         <%= link_to user_path(@event.user) do  %>
-        <h3><%= @profile.first_name %></h3>
+          <h3><%= @event.user.profile.first_name %></h3>
         <% end %>
 
 
       </div>
 
-        <div class="host-actions">
+      <div class="host-actions">
 
-          <% if policy(@event).edit? %>
-            <%= link_to edit_event_path(@event) do %>
-              <i class="fas fa-user-edit"></i>
-            <% end %>
+        <% if current_user == @event.user %>
+          <h4> Control Panel </h4>
+
+          <%= link_to edit_event_path(@event) do %>
+            <i class="fas fa-user-edit"> Edit</i>
+          <% end %>
+          <br>
+          <%= link_to event_path(@event), method: 'delete' do %>
+          <i class="fas fa-trash">Delete</i>
+          <% end %>
+        <% end %>
+
+        <% if current_user != @event.user %>
+          <%= simple_form_for([@event, @booking]) do |f| %>
+            <%= f.submit "JOIN THE PARTY" %>
           <% end %>
 
-          <% if policy(@event).destroy? %>
-            <%= link_to event_path(@event), method: 'delete' do %>
-              <i class="fas fa-trash"></i>
-            <% end %>
-          <% end %>
+        <% end %>
 
-          <% if current_user != @event.user %>
-            <%= simple_form_for([@event, @booking]) do |f| %>
-                <%= f.submit "JOIN THE PARTY" %>
-            <% end %>
-
-          <% end %>
-
-        </div>
+      </div>
 
 
     </div>
@@ -52,22 +54,18 @@
       </div>
 
       <div class="game-details">
-
         <div class="date">
           <%= @event.date.strftime('%A, %b %d') %>
         </div>
 
         <div class="address">
           <%= @event.location %>
-
         </div>
-
       </div>
 
-        <div class="game-description">
-            <%= @event.description %>
-        </div>
-
+      <div class="game-description">
+        <%= @event.description %>
+      </div>
     </div>
 
 
@@ -84,35 +82,27 @@
             <div class="player-details">
               <p class="player-name"><%= booking.user.profile.first_name %></p>
 
-                <% if booking.accepted %>
-                 <p class="player-status"> is coming to the game </p>
-                 <% else %>
+              <% if booking.accepted %>
+                <p class="player-status"> is coming to the game </p>
+              <% else %>
                 <p class="player-status"> is awaiting approval </p>
-                <% end %>
+              <% end %>
 
             </div>
             <div class="booking-control">
               <% if  current_user == @event.user%>
                 <div class="booking-actions">
-                        <%= link_to "ACCEPT/DECLINE", event_booking_path([@event, booking]), method: "patch")%>
+                  <%= link_to "YES/NO", event_booking_path(@event, booking), method: "patch", class: "accept-toggle"%>
                 </div>
               <% end %>
             </div>
           </div>
 
-          <% end %>
+        <% end %>
 
-
+      </div>
 
     </div>
 
-
   </div>
-
-  </div>
-
-
-
-
-
 </div>
