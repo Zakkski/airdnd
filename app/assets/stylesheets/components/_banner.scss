@@ -10,31 +10,31 @@
   font-family: 'Proza Libre', sans-serif;
 }
 
+.banner-btns{
+  display: flex;
+  justify-content:space-around;
+  align-items: center;
+}
 
 
 
-.banner-btn{
+
+.home-btn{
   color: white;
   background-color: #D1CA98;
-  border-radius: 5px;
-  width: 106px;
+  padding-top: 10px;
   height: 46px;
-  display: flex;
-  opacity: 1.4;
-  justify-content: space-around;
-  align-items: center;
-  margin: 29px 44%;
-  text-align: center;
-  border: 1.3px solid #808080;
-
+  width: 137px;
+  padding: 0px;
   a{
-    color:white;
-    &:hover{
-      text-decoration: none;
-      opacity:0.8;
-
-    }
+    padding: 0px;
+    margin: 0px;
   }
+}
+
+.home-btn-icon{
+  background-color: white;
+  width: 20px;
 }
 
 #event-description{

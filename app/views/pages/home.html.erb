@@ -1,5 +1,4 @@
 
-
 <div class="banner">
 
 
@@ -8,13 +7,34 @@
     <h1 class="dungeon-text">Advanced Air Dungeons and Dragons</h1>
     <h3>Never Split up the Party</h3>
 
-    <p class="banner-btn"><%= link_to "Find a game", events_path %></p>
-    <p class="banner-btn">
-      <% if current_user %>
-        <%= link_to "Find Players", new_event_path %>
-      <% else %>
-        <%= link_to "Find Players", new_user_session_path, data: { toggle: "modal", target: "#login-modal" } %>
-      <% end %>
+   <div class="banner-btns">
+    <%= link_to  events_path do %>
+    <div class="home-btn">
+      <div class="home-btn-icon">
+        <p></p>
+
+      </div>
+      <div class="home-btn-text">
+        <p>Create A game</p>
+      </div>
+    </div>
+
+    <% end %>
+       <% if current_user %>
+         <%= link_to  new_event_path do %>
+          <div class="home-btn">
+            <div class="home-btn-icon">
+
+            </div>
+            <div class="home-btn-text">
+              <p>Join a Party!</p>
+            </div>
+          </div>
+        <% end %>
+       <% else %>
+         <%= link_to "Find Players", new_user_session_path, data: { toggle: "modal", target: "#login-modal" } %>
+       <% end %>
+     </div>
   </div>
 
 
