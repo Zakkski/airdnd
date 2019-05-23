@@ -9,9 +9,14 @@
       </div>
 
       <div class="host-details">
-        <h3>Host: <%= @profile.first_name %></h3>
+        <%= cl_image_tag @profile.photo %>
 
-        <%= cl_image_tag @profile.photo, width: 150 %>
+        <%= link_to user_path(@event.user) do  %>
+        <h3><%= @profile.first_name %></h3>
+        <% end %>
+
+
+      </div>
 
         <div class="host-actions">
 
@@ -22,16 +27,12 @@
           <% end %>
 
           <% if policy(@event).destroy? %>
-            <%= link_to events_path(@event), method: 'delete' do %>
+            <%= link_to event_path(@event), method: 'delete' do %>
               <i class="fas fa-trash"></i>
             <% end %>
           <% end %>
 
         </div>
-
-
-      </div>
-
 
 
     </div>
@@ -63,42 +64,43 @@
     </div>
 
 
-
-          <% @bookings.each do |booking| %>
-            <%= simple_form_for([@event, booking]) do |f| %>
-              <%= "#{booking.user.profile.first_name} would like to Join the party" %>
-              <%= f.input :accepted %>
-              <%= f.submit "Accept #{booking.user.profile.first_name}"%>
-            <% end %>
-        <% end %>
-        <% end %>
-
     <div class="column-three">
-    <div class="player-list">
+      <div class="player-list">
 
-      <h2> Players </h2>
-      <% @event.bookings.each do |booking| %>
+        <h2> Players </h2>
+        <% @event.bookings.each do |booking| %>
 
-      <% end %>
+          <div class="player-card">
+            <div class="player-img">
+              <%= cl_image_tag booking.user.profile.photo %>
+            </div>
+            <div class="player-details">
+              <p class="player-name"><%= booking.user.profile.first_name %></p>
 
+                <% if booking.accepted %>
+                 <p class="player-status"> is coming to the game </p>
+                 <% else %>
+                <p class="player-status"> is awaiting approval </p>
+                <% end %>
+
+            </div>
+            <div class="booking-control">
+              <% if  current_user == @event.user%>
+                <div class="booking-actions">
+                        <%= link_to "ACCEPT/DECLINE", event_booking([@event, booking])%>
+                </div>
+              <% end %>
+            </div>
+          </div>
+
+          <% end %>
 
 
 
     </div>
 
 
-    </div>
-
-
-
-
-
-
-
-
-
-
-
+  </div>
 
   </div>
 
@@ -107,4 +109,3 @@
 
 
 </div>
-
