@@ -45,7 +45,7 @@ class EventsController < ApplicationController
     authorize @event
     @event.user = current_user
     if @event.save
-      redirect_to root_path # Needs to redirect to show
+      redirect_to event_path(@event) # Needs to redirect to show
     else
       render :new
     end

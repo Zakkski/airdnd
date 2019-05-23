@@ -30,9 +30,10 @@ class BookingsController < ApplicationController
     if @booking.accepted == false
       @booking.accepted = true
     else
-      @booking.accepted == false
+      @booking.accepted = false
     end
     @booking.save
+    redirect_to event_path(@booking.event)
   end
 
   def index
