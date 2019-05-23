@@ -8,7 +8,6 @@ User.destroy_all
                  "drag3_ewgrag", "demon_qvpjzt", "horror_ayjvoq", "40k2_rhr1zd"]
 
 
-
 u = User.create(email: "user@email.com", password: "password")
 p = Profile.new(first_name: "User", last_name: "Person")
 p.remote_photo_url = "https://picsum.photos/300/300"
