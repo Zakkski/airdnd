@@ -1,25 +1,13 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans|Proza+Libre&display=swap');
 
 .banner{
-  position: relative;
-  background: linear-gradient(to left, rgba(0, 0, 0, 1), rgba(30, 30, 30, 0.53));
-  // background-size: cover;
-  // background-position: center;
+  background-image: linear-gradient(to left, rgba(30, 30, 30, 0.22), rgba(30, 30, 30, 0.53)), asset-url("banner_image");
+  background-size: cover;
+  background-position: center;
   height: 100vh;
-    background-size: 400% 400%;
-
   color: white;
   padding: 13% 15%;
   font-family: 'Proza Libre', sans-serif;
-  -webkit-animation: Gradient 15s ease infinite;
-  -moz-animation: Gradient 15s ease infinite;
-  animation: Gradient 15s ease infinite;
-}
-
-.back {
-  background-image: asset-url("banner_image");
-  background-size: cover;
-  background-position: center;
 }
 
 .home-btn-icon{
@@ -105,60 +93,6 @@
 
 .banner-info{
   text-align:center;
-}
-
-
-.airdnd-logo-svg {
-  position: absolute;
-  left: -450px;
-  top: -680px;
-  width: 500px;
-}
-
-body {
-  // width: 100wh;
-  // height: 90vh;
-  // color: #fff;
-  // background-image: linear-gradient(to left, rgba(30, 30, 30, 0.22), rgba(30, 30, 30, 0.53)), asset-url("banner_image");
-  // background: linear-gradient(-45deg, rgba(0, 0, 0, .2), #E73C7E, #23A6D5, #23D5AB);
-  // background-size: 400% 400%;
-
-}
-
-@-webkit-keyframes Gradient {
-  0% {
-    background-position: 0% 50%
-  }
-  50% {
-    background-position: 100% 50%
-  }
-  100% {
-    background-position: 0% 50%
-  }
-}
-
-@-moz-keyframes Gradient {
-  0% {
-    background-position: 0% 50%
-  }
-  50% {
-    background-position: 100% 50%
-  }
-  100% {
-    background-position: 0% 50%
-  }
-}
-
-@keyframes Gradient {
-  0% {
-    background-position: 0% 50%
-  }
-  50% {
-    background-position: 100% 50%
-  }
-  100% {
-    background-position: 0% 50%
-  }
 }
 
 .event-title {
