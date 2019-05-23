@@ -1,18 +1,17 @@
 <%= render "shared/navbar" %>
 
-<h1 class="event-title">Events</h1>
+<div class="index-banner">
+  <h1>Your events</h1>
 
-<div class="row align-items-start">
-  <div class="event-list col-6">
-    <div class="d-flex flex-wrap">
+</div>
+
+<div class="container">
+  <div class="event-list">
       <% @events.each do |event| %>
         <%= link_to event_path(event), style: "text-decoration: none" do %>
           <%= render partial: "event-card", locals: {event: event} %>
         <% end %>
       <% end %>
-    </div>
   </div>
 </div>
-
-
 
