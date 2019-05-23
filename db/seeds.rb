@@ -26,29 +26,29 @@ p.user = u
 p.save!
 puts "create user@email.com"
 
-5.times do
-  user = User.new(email: Faker::Internet.unique.email, password: "password")
-  user.save!
-  profile = Profile.new(
-    first_name: Faker::Name.first_name,
-    last_name: Faker::Name.last_name)
-  profile.remote_photo_url = "https://picsum.photos/300/300"
-  profile.user = user
-  profile.save!
-end
+# 5.times do
+#   user = User.new(email: Faker::Internet.unique.email, password: "password")
+#   user.save!
+#   profile = Profile.new(
+#     first_name: Faker::Name.first_name,
+#     last_name: Faker::Name.last_name)
+#   profile.remote_photo_url = "https://picsum.photos/300/300"
+#   profile.user = user
+#   profile.save!
+# end
 
 puts "create Users"
 
-8.times do
-  event = Event.new(
-    location: Faker::Movies::HitchhikersGuideToTheGalaxy.location,
-    description: Faker::TvShows::BojackHorseman.tongue_twister,
-    game: games.sample,
-    user: User.all.sample,
-    date: "19900505",
-    photo: img_array.sample,
-    )
-  event.save!
-end
+# 8.times do
+#   event = Event.new(
+#     location: Faker::Movies::HitchhikersGuideToTheGalaxy.location,
+#     description: Faker::TvShows::BojackHorseman.tongue_twister,
+#     game: games.sample,
+#     user: User.all.sample,
+#     date: "19900505",
+#     photo: img_array.sample,
+#     )
+#   event.save!
+# end
 
 puts "create Events"
