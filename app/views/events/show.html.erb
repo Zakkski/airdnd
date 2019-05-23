@@ -1,3 +1,4 @@
+
 <%= render "navbar" %>
 <div class="banner">
 
@@ -36,48 +37,3 @@
               <%= f.input :accepted %>
               <%= f.submit "Accept #{booking.user.profile.first_name}"%>
             <% end %>
-
-          <% end %>
-
-        <% else %>
-        <% if @event.bookings.any? %>
-
-          <% @event.bookings.each do |booking| %>
-              <% if  booking.accepted %>
-                <%= "#{booking.user.profile.first_name} is attending" %>
-              <% end %>
-          <% end %>
-
-        <% end %>
-          <%= simple_form_for([@event, @booking]) do |f| %>
-            <%= f.submit "Join the Party" %>
-          <% end %>
-
-
-        <% if @booking.errors.any? %>
-          <%=  render 'shared/error-messages' %>
-        <% end %>
-
-        <% end %>
-
-        <%if policy(@event).edit?  %>
-
-          <%= link_to edit_event_path(@event) do %>
-            <i class="fas fa-edit"></i>
-          <% end %>
-
-        <% end %>
-
-        <%if policy(@event).destroy?  %>
-
-          <%= link_to event_path(@event), method: :delete do%>
-          <i class="fas fa-trash"></i>
-          <% end %>
-
-        <% end %>
-
-      </div>
-    </div>
-  </div>
-</div>
-
