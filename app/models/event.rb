@@ -5,4 +5,11 @@ class Event < ApplicationRecord
   has_many :bookings, dependent: :destroy
   has_many :users, through: :bookings
   validates :game, :description, :date, :location, presence: true
+
+  include PgSearch
+  pg_search_scope :search_by_game_and_description,
+                  against: [:game, :description, :location],
+                  using: {
+                    tsearch: { prefix: true }
+                  }
 end
