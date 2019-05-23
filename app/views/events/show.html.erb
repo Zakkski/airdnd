@@ -1,39 +1,99 @@
-
-<%= render "navbar" %>
-<div class="banner">
-
-  <div class="container">
-    <div class="row justify-content-center">
-      <div class="col-12 col-lg-9">
-        <div class="row">
-          <h1 id = "event-description"><%= @event.description %></h1>
-        </div>
-
-        <div class="row">
-          <% if @profile %>
-            <p>Hosted by: <span class = "events-show-text"><%= @profile.first_name %></span></%></p>
-          <% end %>
-        </div>
-
-        <div class="row">
-          <br>
-          <p> Event Location:<span class = "events-show-text"> <%= @event.location %></span></p>
-          <br>
-        </div>
-        <div class="row">
-          <p>We are playing:<span class = "events-show-text"> <%= @event.game %> </span></p>
-          <br>
-        </div>
-        <div class="row">
-          <p>Game will be played on:<span class = "events-show-text"> <%= @event.date %></span></%></p>
-        </div>
+<div class="page-wrapper">
 
 
-        <% if  current_user == @event.user %>
+  <div class="event-show-card">
 
-          <% @bookings.each do |booking| %>
-            <%= simple_form_for([@event, booking]) do |f| %>
-              <%= "#{booking.user.profile.first_name} would like to Join the party" %>
-              <%= f.input :accepted %>
-              <%= f.submit "Accept #{booking.user.profile.first_name}"%>
+    <div class="column-one">
+      <div class="game-image">
+        <%= image_tag "dnd.png", alt: "alttext" %>
+      </div>
+
+      <div class="host-details">
+        <h3>Host: <%= @profile.first_name %></h3>
+
+        <%= cl_image_tag @profile.photo, width: 150 %>
+
+        <div class="host-actions">
+
+          <% if policy(@event).edit? %>
+            <%= link_to edit_event_path(@event) do %>
+              <i class="fas fa-user-edit"></i>
             <% end %>
+          <% end %>
+
+          <% if policy(@event).destroy? %>
+            <%= link_to events_path(@event), method: 'delete' do %>
+              <i class="fas fa-trash"></i>
+            <% end %>
+          <% end %>
+
+        </div>
+
+
+      </div>
+
+
+
+    </div>
+
+
+    <div class="column-two">
+
+      <div class="game-name">
+        <h1><%= @event.game %></h1>
+      </div>
+
+      <div class="game-details">
+
+        <div class="date">
+          <%= @event.date.strftime('%A, %b %d') %>
+        </div>
+
+        <div class="address">
+          <%= @event.location %>
+
+        </div>
+
+      </div>
+
+        <div class="game-description">
+            <%= @event.description %>
+        </div>
+
+    </div>
+
+
+    <div class="column-three">
+    <div class="player-list">
+
+      <h2> Players </h2>
+      <% @event.bookings.each do |booking| %>
+
+      <% end %>
+
+
+
+
+    </div>
+
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+
+
+
+
+</div>
