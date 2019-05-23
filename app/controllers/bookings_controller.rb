@@ -27,11 +27,13 @@ class BookingsController < ApplicationController
   def update
     authorize @booking
 
-    if @booking.update(update_booking_params)
-      redirect_to event_path(@booking.event.id)
+    if @booking.accepted == false
+      @booking.accepted = true
     else
-      render 'events/show'
+      @booking.accepted = false
     end
+    @booking.save
+    redirect_to event_path(@booking.event)
   end
 
   def index

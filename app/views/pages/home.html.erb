@@ -1,6 +1,6 @@
-
-
 <div class="banner">
+  <p class="home-login"><%= link_to "Login", new_user_session_path, data: { toggle: "modal", target: "#login-modal" } %>
+  <p class="home-signup"> <%= link_to "Sign up", new_user_registration_path %></p>
 
 
 
@@ -33,12 +33,29 @@
             </div>
           <% end %>
         <% else %>
-          <%= link_to "Find Players", new_user_session_path, data: { toggle: "modal", target: "#login-modal" } %>
+          <%= link_to new_user_session_path, data: { toggle: "modal", target: "#login-modal" } do %>
+          <div class="home-btn">
+              <div class="home-btn-icon">
+                <%= image_tag("airdnd") %>
+              </div>
+              <div class="home-btn-text">
+                <p>Recruit Players!</p>
+              </div>
+            </div>
+          <% end %>
         <% end %>
       </div>
   </div>
+</div>
 
-
-
+<div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="login-modalTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+        <button type="button" class="close close-white" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <%= render 'devise/sessions/new', resource: User.new, resource_name: :user,  devise_mapping: Devise.mappings[:user]%>
+    </div>
+  </div>
 </div>
 

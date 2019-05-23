@@ -8,7 +8,8 @@
   text-align: center;
   background-image: image-url('event-show-background.jpeg');
   background-size: cover;
-  height: 100vh;
+  height: 100%;
+  width: 1050px;
   margin: 25px;
   display: flex;
   box-shadow: 5px 0px 9px -1px rgba(153,148,153,1);
@@ -26,15 +27,26 @@
 }
 
 .host-details {
+  display: flex;
   padding: 8px;
-  height: 400px;
+  height: 200px;
   text-align: center;
-
+  a {
+    text-decoration: none
+  }
+  img {
+    height: 85px;
+    width: 85px;
+    border-radius: 16px;
+  }
 
 }
 
 .host-actions {
-
+  font-size: 32px;
+  padding: 8px;
+  height: 200px;
+  text-align: center;
 }
 .column-one, .column-two, .column-three, {
   padding: 5px;
@@ -80,3 +92,58 @@
   text-align: center;
 
 }
+.player-card {
+  display: flex;
+  align-items: flex-end;
+  border: 1px solid black;
+  margin: 4px 0;
+  border-radius: 5px;
+  box-shadow: 5px 0px 9px -1px rgba(153,148,153,1);
+}
+
+.player-img {
+  width: 45px;
+
+  img {
+    height: 45px;
+    border-radius: 50%;
+  }
+}
+
+.player-details {
+  align-items: center;
+  flex-grow: 2;
+  text-align: center;
+  font-size: 14px;
+  p {
+    display: inline-block;
+  }
+}
+
+.player-status {
+  font-size: 12px;
+}
+
+.booking-control {
+  text-align: center;
+  padding: 9px;
+}
+
+
+.accept-toggle {
+  font-size: 12px;
+  padding: 5px;
+  border-radius: 12px;
+  color: white;
+  background-color: #D1CA98;
+}
+
+
+
+
+
+
+
+
+
+
