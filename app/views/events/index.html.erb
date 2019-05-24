@@ -6,10 +6,8 @@
       <%= text_field_tag :query,
         params[:query],
         class: "form-control",
-        placeholder: "Search for Events" %>
+        placeholder: "Search for Events - hint: neaby" %>
     <% end %>
-
-    <%= link_to "Events Near Me", near_me_event_path(1), class: "btn btn-primary"  %>
   </div>
 
   <div class="container">
