@@ -25,7 +25,9 @@ class EventsController < ApplicationController
   end
 
   def index
-    if params[:query].present?
+    if params[:query] == "nearby"
+      @events = policy_scope(Event).near(current_user.profile.lat_long, 15)
+    elsif params[:query].present?
       @events = policy_scope(Event).search_by_game_and_description(params[:query])
     else
       @events = policy_scope(Event).order(created_at: :desc)
