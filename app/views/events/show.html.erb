@@ -1,85 +1,95 @@
 <%= render "shared/navbar" %>
-<div class="page-wrapper">
+<div class="container">
+  <div class="page-wrapper">
 
 
-  <div class="event-show-card">
+    <div class="event-show-card">
 
-    <div class="column-one">
-      <div class="game-image">
-        <%= cl_image_tag @event.photo %>
-      </div>
-
-      <div class="host-details">
-        <h3>Your Host     </h3>
-       <div class="user">
-        <%= cl_image_tag @event.user.profile.photo %>
-         <%= link_to user_path(@event.user) do  %>
-           <h3><%= @event.user.profile.first_name %></h3>
-         <% end %>
-       </div>
-
-
-      </div>
-
-      <div class="host-actions">
-
-        <% if current_user == @event.user %>
-          <%= link_to edit_event_path(@event) do %>
-            <i class="fas fa-user-edit"></i>
-          <% end %>
-          <br>
-          <%= link_to event_path(@event), method: 'delete' do %>
-          <i class="fas fa-trash"></i>
-          <% end %>
-        <% end %>
-
-        <% if current_user != @event.user %>
-          <%= simple_form_for([@event, @booking]) do |f| %>
-            <%= f.submit "JOIN THE PARTY", class: "submit-btn" %>
-          <% end %>
-          <%= render 'shared/error-messages' %>
-
-        <% end %>
-
-      </div>
-
-
-    </div>
-
-
-    <div class="column-two">
-
-      <div class="col2-top">
-        <div class="game-name">
-          <h1><%= @event.game %></h1>
+      <div class="column-one">
+        <div class="game-image">
+          <%= cl_image_tag @event.photo %>
         </div>
 
-        <div class="game-details">
-          <div class="date">
-            <%= @event.date.strftime('%A, %b %d') %>
+        <div class="host-details">
+          <h3>Your Host     </h3>
+         <div class="user">
+          <%= cl_image_tag @event.user.profile.photo %>
+           <%= link_to user_path(@event.user) do  %>
+             <h3><%= @event.user.profile.first_name %></h3>
+           <% end %>
+         </div>
+
+
+        </div>
+
+        <div class="host-actions">
+
+          <% if current_user == @event.user %>
+            <%= link_to edit_event_path(@event) do %>
+              <i class="fas fa-user-edit"></i>
+            <% end %>
+            <br>
+            <%= link_to event_path(@event), method: 'delete' do %>
+            <i class="fas fa-trash"></i>
+            <% end %>
+          <% end %>
+
+          <% if current_user != @event.user %>
+            <%= simple_form_for([@event, @booking]) do |f| %>
+              <%= f.submit "JOIN THE PARTY", class: "submit-btn" %>
+            <% end %>
+            <%= render 'shared/error-messages' %>
+
+          <% end %>
+
+        </div>
+
+
+      </div>
+
+
+      <div class="column-two">
+
+        <div class="col2-top">
+          <div class="game-name">
+            <h1><%= @event.game %></h1>
           </div>
-        <div class="address">
-          <%= @event.location %>
+
+          <div class="game-details">
+            <div class="date">
+              <%= @event.date.strftime('%A, %b %d') %>
+            </div>
+          <div class="address">
+            <%= @event.location %>
+          </div>
+        </div>
+
+        </div>
+
+        <div class="game-description">
+          <%= @event.description %>
         </div>
       </div>
 
-      </div>
-
-      <div class="game-description">
-        <%= @event.description %>
-      </div>
-    </div>
 
 
 
 
+      <div class="column-three">
+        <div class="player-list">
 
-    <div class="column-three">
-      <div class="player-list">
+          <h2> Players </h2>
+          <div class="under-players">
+           <% @event.bookings.each do |booking| %>
 
-        <h2> Players </h2>
-        <div class="under-players">
-         <% @event.bookings.each do |booking| %>
+             <div class="player-card">
+               <div class="player-img">
+                 <%= cl_image_tag booking.user.profile.photo %>
+               </div>
+               <div class="player-details">
+                 <p class="player-name"><%= booking.user.profile.first_name %></p>
+
+
 
            <div class="player-card">
              <div class="player-img">
@@ -103,23 +113,25 @@
                    <% end %>
                <% end %>
 
-             </div>
-             <div class="booking-control">
-               <% if  current_user == @event.user%>
-                 <div class="booking-actions">
-                   <%= link_to "YES/NO", event_booking_path(@event, booking), method: "patch", class: "accept-toggle"%>
-                 </div>
-               <% end %>
-             </div>
-           </div>
 
-         <% end %>
-       </div>
+               </div>
+               <div class="booking-control">
+                 <% if  current_user == @event.user%>
+                   <div class="booking-actions">
+                     <%= link_to "YES/NO", event_booking_path(@event, booking), method: "patch", class: "accept-toggle"%>
+                   </div>
+                 <% end %>
+               </div>
+             </div>
+
+           <% end %>
+         </div>
+        </div>
+
+
+
       </div>
 
-
-
     </div>
-
   </div>
 </div>
