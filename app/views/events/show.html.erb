@@ -90,15 +90,6 @@
                  <p class="player-name"><%= booking.user.profile.first_name %></p>
 
 
-
-           <div class="player-card">
-             <div class="player-img">
-               <%= cl_image_tag booking.user.profile.photo %>
-             </div>
-             <div class="player-details">
-               <p class="player-name"><%= booking.user.profile.first_name %></p>
-
-
                <% if  booking.user == current_user %>
                    <% if booking.accepted %>
                      <p class="player-status"> You are coming to the game. </p>
