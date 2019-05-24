@@ -11,13 +11,17 @@
   </div>
 
   <div class="container">
-    <div class="event-list">
-        <% @events.each do |event| %>
-          <%= link_to event_path(event), style: "text-decoration: none" do %>
-            <%= render partial: "event-card", locals: {event: event} %>
+    <% if @event.present? %>
+      <div class="event-list">
+          <% @events.each do |event| %>
+            <%= link_to event_path(event), style: "text-decoration: none" do %>
+              <%= render partial: "event-card", locals: {event: event} %>
+            <% end %>
           <% end %>
-        <% end %>
-    </div>
+      </div>
+    <% else %>
+      <h1 class="text-center mt-5">We're sorry nothing matches your search</h1>
+    <% end %>
   </div>
 </div>
 
