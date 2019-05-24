@@ -11,7 +11,7 @@
   </div>
 
   <div class="container">
-    <% if @event.present? %>
+    <% if @events.present? %>
       <div class="event-list">
           <% @events.each do |event| %>
             <%= link_to event_path(event), style: "text-decoration: none" do %>
