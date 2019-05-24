@@ -28,7 +28,7 @@ class BookingsController < ApplicationController
   def update
     authorize @booking
 
-    if @booking.accepted == false
+    if @booking.accepted != true
       @booking.accepted = true
     else
       @booking.accepted = false
