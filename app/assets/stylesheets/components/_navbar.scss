@@ -5,6 +5,16 @@
   width: 100%;
 }
 
+.navbar-lewagon li {
+  margin-left: 20px;
+}
+
+.navbar-lewagon .back-button {
+  border-right: 2px solid #3F3F3F;
+  margin-right: 30px;
+  padding-right: 20px;
+}
+
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
 }
