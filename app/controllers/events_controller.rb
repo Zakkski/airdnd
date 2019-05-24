@@ -26,7 +26,12 @@ class EventsController < ApplicationController
 
   def index
     if params[:query] == "nearby"
-      @events = policy_scope(Event).near(current_user.profile.lat_long, 15)
+      if current_user
+        @events = policy_scope(Event).near(current_user.profile.lat_long, 15) if current_user.profile.lat_long
+      else
+        flash.now[:notice] = "please log in to search nearby"
+        @events = policy_scope(Event).order(created_at: :desc)
+      end
     elsif params[:query].present?
       @events = policy_scope(Event).search_by_game_and_description(params[:query])
     else
