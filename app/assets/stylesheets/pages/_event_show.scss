@@ -191,7 +191,6 @@
 .player-status {
   font-size: 12px;
   font-size: 12px;
-  border-bottom: 1px solid black;
   padding-bottom: 14px;
 }
 
@@ -200,6 +199,11 @@
   padding: 9px;
 }
 
+.line-separator{
+  width: 100%;
+  border-bottom: 0.3px solid #3f3f3f;
+  margin-left: 23px;
+}
 
 .accept-toggle {
   font-size: 12px;
