@@ -14,6 +14,7 @@ class BookingsController < ApplicationController
     authorize @booking
 
     if @booking.save
+      flash.notice = "You're request has been sent!"
       redirect_to event_path(@event)
     else
       render 'events/show'
@@ -33,6 +34,7 @@ class BookingsController < ApplicationController
       @booking.accepted = false
     end
     @booking.save
+    flash.notice = "#{@booking.user.profile.first_name} is #{@booking.accepted ? 'accepted' : 'pending'}"
     redirect_to event_path(@booking.event)
   end
 
