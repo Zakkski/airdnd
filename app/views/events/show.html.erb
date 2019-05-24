@@ -90,19 +90,29 @@
                  <p class="player-name"><%= booking.user.profile.first_name %></p>
 
 
-                 <% if  booking.user == current_user %>
-                     <% if booking.accepted %>
-                       <p class="player-status"> You are coming to the game. </p>
-                     <% else %>
-                       <p class="player-status"> You're request is pending approval </p>
-                     <% end %>
-                 <% else %>
-                     <% if booking.accepted %>
-                       <p class="player-status"> is coming to the game </p>
-                     <% else %>
-                       <p class="player-status"> is awaiting approval </p>
-                     <% end %>
-                 <% end %>
+
+           <div class="player-card">
+             <div class="player-img">
+               <%= cl_image_tag booking.user.profile.photo %>
+             </div>
+             <div class="player-details">
+               <p class="player-name"><%= booking.user.profile.first_name %></p>
+
+
+               <% if  booking.user == current_user %>
+                   <% if booking.accepted %>
+                     <p class="player-status"> You are coming to the game. </p>
+                   <% else %>
+                     <p class="player-status"> Your request is pending approval </p>
+                   <% end %>
+               <% else %>
+                   <% if booking.accepted %>
+                     <p class="player-status"> is coming to the game </p>
+                   <% else %>
+                     <p class="player-status"> is awaiting approval </p>
+                   <% end %>
+               <% end %>
+
 
                </div>
                <div class="booking-control">
