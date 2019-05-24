@@ -20,8 +20,8 @@
         <h3>Looking for an Adventure?</h3>
         <%= link_to events_path do %>
           <div class="home-btn">
-            <%= image_tag("airdnd") %>
-            <p>Join a Party</p>
+            <%= image_tag("airdnd-white") %>
+            <p>Join a Party!</p>
           </div>
         <% end %>
       </div>
@@ -30,14 +30,14 @@
         <% if current_user %>
           <%= link_to new_event_path do %>
             <div class="home-btn">
-              <%= image_tag("airdnd") %>
+              <%= image_tag("airdnd-white") %>
               <p>Recruit Players!</p>
             </div>
           <% end %>
         <% else %>
           <%= link_to new_user_session_path, data: { toggle: "modal", target: "#login-modal" } do %>
             <div class="home-btn">
-              <%= image_tag("airdnd") %>
+              <%= image_tag("airdnd-white") %>
               <p>Recruit Players!</p>
             </div>
           <% end %>

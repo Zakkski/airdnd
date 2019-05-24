@@ -47,7 +47,6 @@ a:hover {
   background-color: #D1CA98;
   border-radius: 27px;
   width: 261px;
-  height: 63px;
   margin: auto;
   a{
     color: white;
@@ -59,13 +58,13 @@ a:hover {
       }
     }
   img{
-    height: 80%;
+    height: 50px;
     transition: transform 0.8s ease;
-    margin-left: 10px;
+    margin: 10px 20px;
   }
   p {
     font-size: 25px;
-    margin: 0 25px;
+    margin: 0;
   }
 }
 
